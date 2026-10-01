@@ -1,0 +1,641 @@
+{
+  "common": {
+    "Header": {
+      "logo_image": "/logo/logo.png",
+      "logo_text": "CarGlow",
+      "logo_subtext": "Car Wash & Detailing",
+      "contact_info": [
+        {
+          "icon": "MapPin",
+          "label": "Our Location",
+          "value": "123 Street, NY"
+        },
+        {
+          "icon": "Clock",
+          "label": "Open Hours",
+          "value": "Mon-Fri: 9 AM - 6 PM"
+        },
+        {
+          "icon": "Mail",
+          "label": "Email Address",
+          "value": "info@carglow.com"
+        }
+      ],
+      "links": [
+        {
+          "name": "Home",
+          "href": "/",
+          "active": true
+        },
+        {
+          "name": "About Us",
+          "href": "#"
+        },
+        {
+          "name": "Services",
+          "href": "#",
+          "sublinks": [
+            {
+              "name": "Basic Wash",
+              "href": "#"
+            },
+            {
+              "name": "Premium Detailing",
+              "href": "#"
+            },
+            {
+              "name": "Ceramic Coating",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "name": "Pricing",
+          "href": "#"
+        },
+        {
+          "name": "Testimonials",
+          "href": "#"
+        },
+        {
+          "name": "Blog",
+          "href": "#"
+        },
+        {
+          "name": "Contact",
+          "href": "#"
+        }
+      ],
+      "button_text": "Get A Quote",
+      "button_link": "#"
+    },
+    "Footer": {
+      "logo_image": "/logo/logo.png",
+      "logo_text": "CarGlow",
+      "description": "Professional car care services to keep your vehicle looking brand new. We offer complete wash and detailing.",
+      "socials": [
+        {
+          "icon": "Facebook",
+          "href": "#"
+        },
+        {
+          "icon": "Twitter",
+          "href": "#"
+        },
+        {
+          "icon": "Instagram",
+          "href": "#"
+        },
+        {
+          "icon": "Linkedin",
+          "href": "#"
+        }
+      ],
+      "quick_links": [
+        {
+          "name": "About Us",
+          "href": "#"
+        },
+        {
+          "name": "Our Services",
+          "href": "#"
+        },
+        {
+          "name": "Pricing Plans",
+          "href": "#"
+        },
+        {
+          "name": "Testimonials",
+          "href": "#"
+        },
+        {
+          "name": "Blog",
+          "href": "#"
+        },
+        {
+          "name": "Contact Us",
+          "href": "#"
+        }
+      ],
+      "our_services": [
+        {
+          "name": "Exterior Wash",
+          "href": "#"
+        },
+        {
+          "name": "Interior Detailing",
+          "href": "#"
+        },
+        {
+          "name": "Paint Protection",
+          "href": "#"
+        },
+        {
+          "name": "Engine Cleaning",
+          "href": "#"
+        },
+        {
+          "name": "Tire & Wheels",
+          "href": "#"
+        },
+        {
+          "name": "Ceramic Coating",
+          "href": "#"
+        }
+      ],
+      "contact": {
+        "address": "123 Street, New York, NY",
+        "phone": "+1 234 567 890",
+        "email": "info@carglow.com"
+      },
+      "copyright": "&copy; 2026 CarGlow. All Rights Reserved. Powered by Lestow"
+    }
+  },
+  "categories": {
+    "Automotive": {
+      "templateComponents": {
+        "template-1": {
+          "pages": {
+            "home": {
+              "title": "Home",
+              "pageName": "Home",
+              "metadata": {
+                "title": "CarGlow - Car Wash & Detailing"
+              },
+              "components": [
+                {
+                  "key": "HeroSection",
+                  "component": "Hero"
+                },
+                {
+                  "key": "AboutSection",
+                  "component": "About"
+                },
+                {
+                  "key": "ServicesSection",
+                  "component": "Services"
+                },
+                {
+                  "key": "FeaturesSection",
+                  "component": "Features"
+                },
+                {
+                  "key": "PricingSection",
+                  "component": "Pricing"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                },
+                {
+                  "key": "CtaSection",
+                  "component": "Cta"
+                },
+                {
+                  "key": "BlogSection",
+                  "component": "Blog"
+                }
+              ]
+            }
+          },
+          "sections": {
+            "hero": {
+              "slides": [
+                {
+                  "subtitle": "PREMIUM CAR WASH\nCAR WASH & DETAILING.",
+                  "title_line1": "A Cleaner Car",
+                  "title_highlight": "A Brighter",
+                  "title_line2": "You",
+                  "description": "Professional car wash and detailing services to keep your vehicle looking its best inside and out.",
+                  "primary_button": {
+                    "text": "Book A Wash",
+                    "href": "#"
+                  },
+                  "secondary_button": {
+                    "text": "Our Services",
+                    "href": "#"
+                  },
+                  "image": "/banner/1.png"
+                },
+                {
+                  "subtitle": "PREMIUM AUTO DETAILING\nCAR WASH & DETAILING.",
+                  "title_line1": "Restore Your Car's",
+                  "title_highlight": "Original",
+                  "title_line2": "Glory",
+                  "description": "Our expert team uses industry-leading products to bring back the showroom shine to your vehicle.",
+                  "primary_button": {
+                    "text": "Book A Wash",
+                    "href": "#"
+                  },
+                  "secondary_button": {
+                    "text": "Our Services",
+                    "href": "#"
+                  },
+                  "image": "/banner/2.png"
+                }
+              ],
+              "stats": [
+                {
+                  "icon": "ShieldCheck",
+                  "label": "Trusted Professionals"
+                },
+                {
+                  "icon": "Sparkles",
+                  "label": "High-Quality Products"
+                },
+                {
+                  "icon": "Car",
+                  "label": "Spotless Results"
+                }
+              ],
+              "floating_badges": [
+                {
+                  "value": "5K+",
+                  "label": "Happy Clients",
+                  "icon": "Users"
+                },
+                {
+                  "value": "10+",
+                  "label": "Years Experience",
+                  "icon": "Award"
+                }
+              ]
+            },
+            "about": {
+              "subtitle": "ABOUT US",
+              "title_line1": "Driven by Clean.",
+              "title_highlight": "Powered by Care.",
+              "description": "At CarGlow, we believe a clean car is more than just a service — it's a better driving experience. Our professional car wash and detailing solutions are designed to keep your vehicle looking its best, inside and out. With quality products, skilled experts, and a customer-first approach, we make car care simple, reliable, and convenient.",
+              "steps": [
+                {
+                  "title": "Premium Service",
+                  "description": "High-quality car care with professional touch.",
+                  "icon": "Gem"
+                },
+                {
+                  "title": "Trusted Professionals",
+                  "description": "Skilled team you can rely on for the best results.",
+                  "icon": "ShieldCheck"
+                },
+                {
+                  "title": "Eco-Friendly Products",
+                  "description": "Safe for your car and the environment.",
+                  "icon": "Leaf"
+                },
+                {
+                  "title": "Convenient & Flexible",
+                  "description": "Choose what works best for your schedule.",
+                  "icon": "Clock3"
+                }
+              ]
+            },
+            "work_process": {
+              "subtitle": "WORK PROCESS",
+              "title_line1": "How We ",
+              "title_highlight": "Work",
+              "description": "A simple and seamless process to keep your car clean, protected and looking its best.",
+              "button": {
+                "text": "BOOK NOW",
+                "href": "#"
+              },
+              "steps": [
+                {
+                  "number": "01",
+                  "title": "Contactless Washing",
+                  "description": "Book your service online or at your convenience. We ensure a hassle-free experience.",
+                  "icon": "CarWash"
+                },
+                {
+                  "number": "02",
+                  "title": "Safety Materials",
+                  "description": "We use high-quality, eco-friendly products that are safe for your vehicle and the environment.",
+                  "icon": "Droplets"
+                },
+                {
+                  "number": "03",
+                  "title": "Modern Equipment",
+                  "description": "Our team uses advanced tools and techniques for a deeper, more effective clean.",
+                  "icon": "Settings"
+                },
+                {
+                  "number": "04",
+                  "title": "Extensive Cleaning",
+                  "description": "From exterior wash to interior detailing, we give your car a complete and caring clean.",
+                  "icon": "Sparkles"
+                }
+              ]
+            },
+            "services": {
+              "subtitle": "OUR SERVICES",
+              "title_line1": "Complete Care",
+              "title_highlight": "For Your Car",
+              "description": "We offer a wide range of detailing services to keep your vehicle in top condition inside and out.",
+              "button": {
+                "text": "View All Services",
+                "href": "#"
+              },
+              "items": [
+                {
+                  "title": "Car Wash",
+                  "description": "Thorough exterior cleaning for a fresh and glossy look.",
+                  "image": "/services/1.png",
+                  "link": "#",
+                  "icon": "Car"
+                },
+                {
+                  "title": "Interior Detailing",
+                  "description": "Deep cleaning for a healthier and more comfortable ride.",
+                  "image": "/services/2.png",
+                  "link": "#",
+                  "icon": "Armchair"
+                },
+                {
+                  "title": "Paint Protection",
+                  "description": "Keep your car's paint safe and shining for longer.",
+                  "image": "/services/3.png",
+                  "link": "#",
+                  "icon": "Sparkles"
+                },
+                {
+                  "title": "Engine Cleaning",
+                  "description": "Remove dirt and grease for better performance.",
+                  "image": "/services/4.png",
+                  "link": "#",
+                  "icon": "Settings2"
+                },
+                {
+                  "title": "Tyre & Rim Care",
+                  "description": "Clean, shine and protect your tyres and rims.",
+                  "image": "/services/5.png",
+                  "link": "#",
+                  "icon": "LifeBuoy"
+                },
+                {
+                  "title": "Ceramic Coating",
+                  "description": "Long-lasting protection and incredible gloss for your car.",
+                  "image": "/services/1.png",
+                  "link": "#",
+                  "icon": "Sparkles"
+                }
+              ]
+            },
+            "features": {
+              "subtitle": "WHY CHOOSE US",
+              "title_line1": "More Than a Car Wash,",
+              "title_highlight": "A Commitment to Care.",
+              "description": "We go beyond cleaning. Our focus is on quality, convenience and complete customer satisfaction, so your car always looks and feels its best.",
+              "image": "/about/aa.png",
+              "badge": {
+                "value": "100%",
+                "label": "Customer Satisfaction"
+              },
+              "items": [
+                {
+                  "title": "Experienced Team",
+                  "description": "Skilled professionals with years of hands-on experience.",
+                  "icon": "Users"
+                },
+                {
+                  "title": "Premium Products",
+                  "description": "We use high-quality, vehicle-safe cleaning products.",
+                  "icon": "ShieldCheck"
+                },
+                {
+                  "title": "Modern Equipment",
+                  "description": "Advanced tools and techniques for a deeper, safer clean.",
+                  "icon": "Settings"
+                },
+                {
+                  "title": "On-Time Service",
+                  "description": "We value your time and always stick to the schedule.",
+                  "icon": "Clock"
+                },
+                {
+                  "title": "Customer Satisfaction",
+                  "description": "Your happiness is our priority. We aim to exceed expectations.",
+                  "icon": "Star"
+                },
+                {
+                  "title": "Eco-Friendly Approach",
+                  "description": "Safe for your car and better for the environment.",
+                  "icon": "Leaf"
+                }
+              ]
+            },
+            "pricing": {
+              "subtitle": "PRICING PACKAGES",
+              "title_line1": "Choose the",
+              "title_highlight": "Perfect Care Package",
+              "description": "Premium car care services at affordable prices. Pick the package that suits your needs and keep your car looking its best.",
+              "packages": [
+                {
+                  "name": "SILVER PACKAGE",
+                  "description": "Essential Care\nfor a Cleaner Ride",
+                  "price": "$49",
+                  "period": "/Service",
+                  "is_popular": false,
+                  "image": "/price/1.png",
+                  "features": [
+                    {
+                      "text": "Exterior Hand Wash",
+                      "included": true
+                    },
+                    {
+                      "text": "Basic Interior Cleaning",
+                      "included": true
+                    },
+                    {
+                      "text": "Tire Cleaning",
+                      "included": true
+                    },
+                    {
+                      "text": "Dashboard Wipe",
+                      "included": true
+                    },
+                    {
+                      "text": "Quick Dry & Shine",
+                      "included": true
+                    }
+                  ],
+                  "button": {
+                    "text": "BOOK THIS PACKAGE \u2192",
+                    "href": "#"
+                  }
+                },
+                {
+                  "name": "GOLD PACKAGE",
+                  "description": "Complete Care\nInside & Out",
+                  "price": "$79",
+                  "period": "/Service",
+                  "is_popular": true,
+                  "image": "/price/2.png",
+                  "features": [
+                    {
+                      "text": "Everything in Silver",
+                      "included": true
+                    },
+                    {
+                      "text": "Deep Interior Cleaning",
+                      "included": true
+                    },
+                    {
+                      "text": "Premium Wax & Polish",
+                      "included": true
+                    },
+                    {
+                      "text": "Glass Cleaning (Inside & Outside)",
+                      "included": true
+                    },
+                    {
+                      "text": "Tire & Rim Shine",
+                      "included": true
+                    },
+                    {
+                      "text": "Longer Lasting Protection",
+                      "included": true
+                    }
+                  ],
+                  "button": {
+                    "text": "BOOK THIS PACKAGE \u2192",
+                    "href": "#"
+                  }
+                },
+                {
+                  "name": "PLATINUM PACKAGE",
+                  "description": "Ultimate Care\nFor a Showroom Finish",
+                  "price": "$129",
+                  "period": "/Service",
+                  "is_popular": false,
+                  "image": "/price/3.png",
+                  "features": [
+                    {
+                      "text": "Everything in Gold",
+                      "included": true
+                    },
+                    {
+                      "text": "Paint Protection Treatment",
+                      "included": true
+                    },
+                    {
+                      "text": "Engine Bay Cleaning",
+                      "included": true
+                    },
+                    {
+                      "text": "Odor Removal Treatment",
+                      "included": true
+                    },
+                    {
+                      "text": "Interior Conditioning",
+                      "included": true
+                    },
+                    {
+                      "text": "Premium Finish & Lasting Shine",
+                      "included": true
+                    }
+                  ],
+                  "button": {
+                    "text": "BOOK THIS PACKAGE \u2192",
+                    "href": "#"
+                  }
+                }
+              ]
+            },
+            "testimonials": {
+              "subtitle": "WHAT OUR CLIENTS SAY",
+              "title_line1": "What Our",
+              "title_highlight": "Customers Say",
+              "description": "Don't just take our word for it. Read what our satisfied customers have to say about our services.",
+              "reviews": [
+                {
+                  "text": "The team at CarGlow did an amazing job on my SUV. It looks brand new! I highly recommend their Gold package.",
+                  "author": "Maria Davis",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/1.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Excellent service and attention to detail. They removed stains from my seats that I thought were permanent.",
+                  "author": "John Thomas",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/2.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Fast, professional, and friendly. The exterior wash left my car shining beautifully. Will definitely return.",
+                  "author": "Emily Smith",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/3.png",
+                  "rating": 5
+                },
+                {
+                  "text": "The attention to detail is unmatched. My car's interior hasn't looked this good since I bought it!",
+                  "author": "Michael Brown",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/4.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Great value for the Platinum package. The ceramic coating really made the paint pop and protects it from rain.",
+                  "author": "Sarah Wilson",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/5.png",
+                  "rating": 4
+                },
+                {
+                  "text": "I was able to schedule an appointment easily and the team was incredibly punctual. Fantastic work.",
+                  "author": "David Clark",
+                  "role": "Verified Client",
+                  "avatar": "/testimonails/6.png",
+                  "rating": 5
+                }
+              ]
+            },
+            "cta": {
+              "title_line1": "Get a Quote for Your",
+              "title_highlight": "Car Care Service",
+              "description": "Contact us today to schedule your next appointment or to learn more about our services.",
+              "phone": "+1 800 555 1234",
+              "button": {
+                "text": "Get a Quote",
+                "href": "#"
+              },
+              "image": "/img/cta.png"
+            },
+            "blog": {
+              "subtitle": "OUR BLOG",
+              "title_line1": "Tips, Insights &",
+              "title_highlight": "Car Care Guides",
+              "description": "Discover helpful tips and expert advice on keeping your vehicle in perfect condition.",
+              "posts": [
+                {
+                  "title": "5 Easy Car Care Tips to Keep Your Car Looking New",
+                  "description": "Simple maintenance steps you can do at home to preserve your car's appearance.",
+                  "image": "/blog/1.png",
+                  "date": "12 Oct 2026",
+                  "category": "Car Care Tips",
+                  "link": "#"
+                },
+                {
+                  "title": "Why Interior Detailing Matters for a Healthier Drive",
+                  "description": "Learn how a clean interior improves air quality and enhances your driving experience.",
+                  "image": "/blog/2.png",
+                  "date": "28 Sep 2026",
+                  "category": "Detailing Guide",
+                  "link": "#"
+                },
+                {
+                  "title": "Easy to Protect Your Car's Paint from Harsh Weather",
+                  "description": "Discover the best products and methods to shield your car's exterior from the elements.",
+                  "image": "/blog/3.png",
+                  "date": "15 Sep 2026",
+                  "category": "Paint Protection",
+                  "link": "#"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
