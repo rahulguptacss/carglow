@@ -46,7 +46,7 @@ const leftVariants: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-export default function About({ data }: { data: AboutSectionData }) {
+export default function About({ data, hideCta = false }: { data: AboutSectionData, hideCta?: boolean }) {
   return (
     <section className="relative w-full overflow-hidden border-t border-zinc-200 bg-white">
       <div className="mx-auto max-w-[1350px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-[70px] xl:px-12">
@@ -172,15 +172,17 @@ export default function About({ data }: { data: AboutSectionData }) {
             </div>
 
             {/* CTA Button */}
-            <motion.div variants={itemVariants}>
-              <a
-                href="/about-us"
-                className="inline-flex w-full sm:w-auto h-[54px] items-center justify-center gap-4 rounded-[6px] bg-[#910A1D] px-8 text-[15px] font-medium text-white no-underline transition-all duration-300 hover:bg-[#7a0818]"
-              >
-                <span>More About Us</span>
-                <ArrowRight className="h-[21px] w-[21px]" strokeWidth={1.8} />
-              </a>
-            </motion.div>
+            {!hideCta && (
+              <motion.div variants={itemVariants}>
+                <a
+                  href="/about-us"
+                  className="inline-flex w-full sm:w-auto h-[54px] items-center justify-center gap-4 rounded-[6px] bg-[#910A1D] px-8 text-[15px] font-medium text-white no-underline transition-all duration-300 hover:bg-[#7a0818]"
+                >
+                  <span>More About Us</span>
+                  <ArrowRight className="h-[21px] w-[21px]" strokeWidth={1.8} />
+                </a>
+              </motion.div>
+            )}
 
           </motion.div>
         </div>

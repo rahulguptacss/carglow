@@ -3,18 +3,22 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TestimonialsSectionData } from '../../types';
-import { Star, MapPin } from 'lucide-react';
+import { Star, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
 
-export default function Testimonials({ data }: { data: TestimonialsSectionData }) {
+export default function Testimonials({ data, isGrid = false, itemsPerPage = 6, showPagination = true, bgClass = "bg-[#fdfdfd]" }: { data: TestimonialsSectionData, isGrid?: boolean, itemsPerPage?: number, showPagination?: boolean, bgClass?: string }) {
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   
   const reviews = data?.reviews && data.reviews.length > 0 ? data.reviews : [
     { text: "The team at CarGlow did an amazing job on my SUV. It looks brand new! I highly recommend their Gold package.", author: "Maria Davis", role: "Verified Client", avatar: "/testimonails/1.png", rating: 5 },
     { text: "Excellent service and attention to detail. They removed stains from my seats that I thought were permanent.", author: "John Thomas", role: "Verified Client", avatar: "/testimonails/2.png", rating: 5 }
   ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(reviews.length / itemsPerPage);
+  const currentReviews = isGrid && showPagination ? reviews.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) : reviews;
   
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start' },
@@ -38,7 +42,7 @@ export default function Testimonials({ data }: { data: TestimonialsSectionData }
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-[40px] sm:py-[50px] bg-[#fdfdfd]">
+    <section className={`py-[40px] sm:py-[50px] ${bgClass}`}>
       <div className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-10">
         
         {/* =================================================
@@ -61,14 +65,14 @@ export default function Testimonials({ data }: { data: TestimonialsSectionData }
         </div>
         
         {/* =================================================
-            CARDS SLIDER (EMBLA)
+            CARDS SLIDER (EMBLA) OR GRID
         ================================================= */}
-        <div className="overflow-hidden pb-[15px]" ref={emblaRef}>
-          <div className="flex -ml-[20px]">
-            {reviews.map((review, idx) => (
+        <div className={isGrid ? "pb-[15px]" : "overflow-hidden pb-[15px]"} ref={isGrid ? null : emblaRef}>
+          <div className={isGrid ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]" : "flex -ml-[20px]"}>
+            {currentReviews.map((review, idx) => (
               <div 
                 key={idx} 
-                className="pl-[20px] min-w-0 flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333333%]"
+                className={isGrid ? "w-full" : "pl-[20px] min-w-0 flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333333%]"}
               >
                 <div className="h-full bg-white px-[30px] py-[20px] sm:px-[35px] sm:py-[25px] rounded-[16px] border border-[#f1f1f1] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-1 transition-transform duration-300">
                   
@@ -117,7 +121,7 @@ export default function Testimonials({ data }: { data: TestimonialsSectionData }
         </div>
 
         {/* CAROUSEL INDICATORS */}
-        {scrollSnaps.length > 1 && (
+        {!isGrid && scrollSnaps.length > 1 && (
           <div className="mt-[30px] flex items-center justify-center gap-[10px]">
             {scrollSnaps.map((_, index) => (
               <button
@@ -129,6 +133,50 @@ export default function Testimonials({ data }: { data: TestimonialsSectionData }
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
+          </div>
+        )}
+
+        {/* PAGINATION */}
+        {isGrid && showPagination && totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
+                currentPage === 1
+                  ? 'bg-zinc-100 text-zinc-300 cursor-not-allowed'
+                  : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900'
+              }`}
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
+                  currentPage === i + 1 
+                    ? 'bg-[#910A1D] text-white shadow-lg shadow-[#910A1D]/20' 
+                    : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900'
+                }`}
+                aria-label={`Go to page ${i + 1}`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
+                currentPage === totalPages
+                  ? 'bg-zinc-100 text-zinc-300 cursor-not-allowed'
+                  : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900'
+              }`}
+              aria-label="Next page"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
         )}
         

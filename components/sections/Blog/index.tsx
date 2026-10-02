@@ -1,22 +1,39 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { BlogSectionData } from '../../types';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Blog({ data }: { data: BlogSectionData }) {
+export default function Blog({ 
+  data, 
+  bgClass = "bg-white",
+  showPagination = false,
+  itemsPerPage = 3
+}: { 
+  data: BlogSectionData, 
+  bgClass?: string,
+  showPagination?: boolean,
+  itemsPerPage?: number
+}) {
   // Use screenshot description if needed, or fallback to data.json
   const desc = "Stay informed with expert tips, maintenance advice and the latest updates from the world of car care and detailing.";
 
-  const posts = data?.posts && data.posts.length > 0 ? data.posts : [
+  const allPosts = data?.posts && data.posts.length > 0 ? data.posts : [
     { title: "5 Easy Car Care Tips to Keep Your Car Looking New", description: "Simple maintenance steps you can do at home to preserve your car's appearance.", image: "/blog/1.png", date: "12 Oct 2026", category: "Car Care Tips", link: "#" },
     { title: "Why Interior Detailing Matters for a Healthier Drive", description: "Learn how a clean interior improves air quality and enhances your driving experience.", image: "/blog/2.png", date: "28 Sep 2026", category: "Detailing Guide", link: "#" }
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(allPosts.length / itemsPerPage);
+  
+  const currentPosts = showPagination 
+    ? allPosts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    : allPosts.slice(0, itemsPerPage); // Defaults to limit on homepage
+
   return (
-    <section className="py-[40px] sm:py-[50px] bg-white">
+    <section className={`py-[40px] sm:py-[50px] ${bgClass}`}>
       <div className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-10">
         
         {/* =================================================
@@ -31,7 +48,7 @@ export default function Blog({ data }: { data: BlogSectionData }) {
         >
           <div className="mb-[12px] sm:mb-[15px] flex items-center justify-center gap-[10px] sm:gap-[15px]">
             <span className="h-[1.5px] w-[25px] sm:w-[35px] bg-[#910A1D]" />
-            <span className="text-[11px] sm:text-[12px] font-bold uppercase tracking-[2px] text-[#910A1D]">
+            <span className="text-[13px] font-bold uppercase tracking-[2px] text-[#910A1D]">
               OUR BLOGS
             </span>
             <span className="h-[1.5px] w-[25px] sm:w-[35px] bg-[#910A1D]" />
@@ -48,7 +65,7 @@ export default function Blog({ data }: { data: BlogSectionData }) {
             CARDS GRID
         ================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
-          {posts.map((post, idx) => {
+          {currentPosts.map((post, idx) => {
             // Parse date "12 Oct 2026" into parts
             const dateParts = post.date.split(' ');
             const day = dateParts[0] || '12';
@@ -114,6 +131,52 @@ export default function Blog({ data }: { data: BlogSectionData }) {
             );
           })}
         </div>
+
+        {/* Pagination Controls */}
+        {showPagination && totalPages > 1 && (
+          <div className="mt-12 flex justify-center items-center gap-2">
+            <button
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
+                currentPage === 1
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-zinc-800 shadow-md hover:bg-[#910A1D] hover:text-white border border-gray-100'
+              }`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full font-semibold transition-all duration-300 ${
+                    currentPage === i + 1
+                      ? 'bg-[#910A1D] text-white shadow-md'
+                      : 'bg-white text-zinc-600 shadow-sm hover:bg-red-50 border border-gray-100'
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
+                currentPage === totalPages
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-zinc-800 shadow-md hover:bg-[#910A1D] hover:text-white border border-gray-100'
+              }`}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   );

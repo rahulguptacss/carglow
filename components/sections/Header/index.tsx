@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname } from 'next/navigation';
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import {
@@ -23,6 +25,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function Header({ data }: { data: HeaderData }) {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [openMobileDropdowns, setOpenMobileDropdowns] = useState<Record<number, boolean>>({});
@@ -75,12 +78,17 @@ export default function Header({ data }: { data: HeaderData }) {
   };
 
   return (
-    <motion.header
-      className="w-full sticky top-0 z-50 bg-white shadow-sm"
-      initial="hidden"
-      animate="visible"
-      variants={headerVariants}
-    >
+    <>
+      {/* Spacer to prevent layout shift when header becomes fixed */}
+      <div className="hidden lg:block h-[153px] w-full" />
+      <div className="lg:hidden h-[72px] w-full" />
+      
+      <motion.header
+        className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm"
+        initial="hidden"
+        animate="visible"
+        variants={headerVariants}
+      >
 
       {/* =====================================================
           DESKTOP HEADER
@@ -182,6 +190,7 @@ export default function Header({ data }: { data: HeaderData }) {
             <nav className="flex items-center h-full gap-[55px] px-[40px]">
               {data.links?.map((link, idx) => {
                 const hasDropdown = link.sublinks && link.sublinks.length > 0;
+                const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
 
                 return (
                   <div
@@ -196,7 +205,7 @@ export default function Header({ data }: { data: HeaderData }) {
                       initial="hidden"
                       animate="visible"
                       href={link.href}
-                      className={`relative h-full flex items-center gap-[5px] text-[15px] font-medium no-underline whitespace-nowrap transition-colors ${link.active ? 'text-white' : 'text-[#e5e7eb] hover:text-white'
+                      className={`relative h-full flex items-center gap-[5px] text-[15px] font-medium no-underline whitespace-nowrap transition-colors ${isActive ? 'text-white' : 'text-[#e5e7eb] hover:text-white'
                         }`}
                     >
                       {link.name}
@@ -209,7 +218,7 @@ export default function Header({ data }: { data: HeaderData }) {
                       )}
 
                       {/* ACTIVE RED LINE */}
-                      {link.active && (
+                      {isActive && (
                         <motion.span
                           layoutId="activeTab"
                           className="absolute left-0 bottom-[9px] w-full h-[2px] bg-[#720016]"
@@ -229,13 +238,16 @@ export default function Header({ data }: { data: HeaderData }) {
                             className="absolute top-full left-0 mt-0 min-w-[200px] bg-[#11171d] border-t-[3px] border-[#720016] shadow-xl py-2 z-50 flex flex-col"
                           >
                             {link.sublinks!.map((sub, sidx) => (
-                              <a
+                              <motion.a
                                 key={sidx}
                                 href={sub.href}
-                                className="px-[20px] py-[10px] text-[14.5px] text-[#e5e7eb] hover:text-white hover:bg-[#720016]/80 transition-colors whitespace-nowrap block"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: sidx * 0.05, duration: 0.2 }}
+                                className="px-[20px] py-[10px] text-[14.5px] text-[#e5e7eb] hover:text-white hover:bg-[#720016]/80 hover:pl-[26px] hover:pr-[14px] transition-all duration-300 whitespace-nowrap block"
                               >
                                 {sub.name}
-                              </a>
+                              </motion.a>
                             ))}
                           </motion.div>
                         )}
@@ -329,6 +341,7 @@ export default function Header({ data }: { data: HeaderData }) {
                 {data.links?.map((link, idx) => {
                   const hasDropdown = link.sublinks && link.sublinks.length > 0;
                   const isOpen = openMobileDropdowns[idx];
+                  const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
 
                   return (
                     <div key={idx} className="flex flex-col border-b border-white/10">
@@ -336,7 +349,7 @@ export default function Header({ data }: { data: HeaderData }) {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className={`min-h-[52px] flex items-center justify-between text-[15px] font-medium no-underline ${link.active ? 'text-white bg-[#720016]' : 'text-white'
+                        className={`min-h-[52px] flex items-center justify-between text-[15px] font-medium no-underline ${isActive ? 'text-white bg-[#720016]' : 'text-white'
                           }`}
                       >
                         <a href={link.href} className="flex-1 px-[22px] py-[15px] block">
@@ -359,13 +372,16 @@ export default function Header({ data }: { data: HeaderData }) {
                           <div className="overflow-hidden bg-[#0a0f13]">
                             <div className="flex flex-col py-[5px]">
                               {link.sublinks!.map((sub, sidx) => (
-                                <a
+                                <motion.a
                                   key={sidx}
                                   href={sub.href}
-                                  className="px-[40px] py-[12px] text-[14px] text-[#9ca3af] hover:text-white hover:bg-white/5 transition-colors border-b border-white/5 last:border-0"
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: sidx * 0.05, duration: 0.2 }}
+                                  className="px-[40px] py-[12px] text-[14px] text-[#9ca3af] hover:text-white hover:bg-white/5 hover:pl-[46px] hover:pr-[34px] transition-all duration-300 border-b border-white/5 last:border-0 block"
                                 >
                                   {sub.name}
-                                </a>
+                                </motion.a>
                               ))}
                             </div>
                           </div>
@@ -395,5 +411,6 @@ export default function Header({ data }: { data: HeaderData }) {
 
       </div>
     </motion.header>
+    </>
   );
 }

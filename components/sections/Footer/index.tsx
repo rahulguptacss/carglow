@@ -30,7 +30,7 @@ export default function Footer({ data }: { data: FooterData }) {
       
       {/* Background Image */}
       <div 
-        className="absolute top-0 right-0 h-full w-full lg:w-[60%] z-0 pointer-events-none bg-no-repeat bg-cover bg-right"
+        className="absolute top-0 right-0 h-[1500px] lg:h-full w-full lg:w-[60%] z-0 pointer-events-none bg-no-repeat bg-cover bg-top lg:bg-right"
         style={{ backgroundImage: "url('/img/footer.png')" }}
       >
         {/* Gradient overlay to fade it into the dark background smoothly - now applied to mobile too! */}
@@ -188,9 +188,11 @@ export default function Footer({ data }: { data: FooterData }) {
             }}
           />
           <div className="flex items-center justify-center flex-wrap gap-[15px] lg:gap-[20px] text-[13px] lg:text-[14px] text-[#e5e7eb]">
-            <a href="#" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</a>
+            <a href="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</a>
             <div className="h-[14px] w-[2px] bg-[#910A1D]"></div>
-            <a href="#" className="hover:text-white transition-colors whitespace-nowrap">Terms & Conditions</a>
+            <a href="/terms-conditions" className="hover:text-white transition-colors whitespace-nowrap">Terms & Conditions</a>
+            <div className="h-[14px] w-[2px] bg-[#910A1D]"></div>
+            <a href="/refund-policy" className="hover:text-white transition-colors whitespace-nowrap">Refund Policy</a>
             <div className="h-[14px] w-[2px] bg-[#910A1D] hidden sm:block"></div>
             <a href="#" className="hover:text-white transition-colors whitespace-nowrap hidden sm:block">Sitemap</a>
           </div>

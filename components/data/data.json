@@ -28,38 +28,60 @@
           "active": true
         },
         {
-          "name": "About Us",
-          "href": "#"
-        },
-        {
-          "name": "Services",
+          "name": "About",
           "href": "#",
           "sublinks": [
             {
-              "name": "Basic Wash",
-              "href": "#"
+              "name": "About Us",
+              "href": "/about"
             },
             {
-              "name": "Premium Detailing",
-              "href": "#"
+              "name": "Why Choose Us",
+              "href": "/why-choose-us"
             },
             {
-              "name": "Ceramic Coating",
-              "href": "#"
+              "name": "Mission & Vision",
+              "href": "/mission-vision"
+            },
+            {
+              "name": "Our Team",
+              "href": "/team"
             }
           ]
         },
         {
-          "name": "Pricing",
-          "href": "#"
+          "name": "Services",
+          "href": "/services"
+        },
+        {
+          "name": "Packages",
+          "href": "/packages"
         },
         {
           "name": "Testimonials",
-          "href": "#"
+          "href": "/testimonials"
+        },
+        {
+          "name": "Pages",
+          "href": "#",
+          "sublinks": [
+            {
+              "name": "Doorstep Wash",
+              "href": "/doorstep-wash"
+            },
+            {
+              "name": "404 Error",
+              "href": "/404"
+            },
+            {
+              "name": "FAQs",
+              "href": "/faqs"
+            }
+          ]
         },
         {
           "name": "Blog",
-          "href": "#"
+          "href": "/blog"
         },
         {
           "name": "Contact",
@@ -76,37 +98,37 @@
       "socials": [
         {
           "icon": "Facebook",
-          "href": "#"
+          "href": "https://facebook.com"
         },
         {
           "icon": "Twitter",
-          "href": "#"
+          "href": "https://twitter.com"
         },
         {
           "icon": "Instagram",
-          "href": "#"
+          "href": "https://instagram.com"
         },
         {
           "icon": "Linkedin",
-          "href": "#"
+          "href": "https://linkedin.com"
         }
       ],
       "quick_links": [
         {
           "name": "About Us",
-          "href": "#"
+          "href": "/about"
         },
         {
           "name": "Our Services",
-          "href": "#"
+          "href": "/services"
         },
         {
           "name": "Pricing Plans",
-          "href": "#"
+          "href": "/packages"
         },
         {
           "name": "Testimonials",
-          "href": "#"
+          "href": "/testimonials"
         },
         {
           "name": "Blog",
@@ -145,7 +167,7 @@
       ],
       "contact": {
         "address": "123 Street, New York, NY",
-        "phone": "+1 234 567 890",
+        "phone": "+1 00000000000",
         "email": "info@carglow.com"
       },
       "copyright": "&copy; 2026 CarGlow. All Rights Reserved. Powered by Lestow"
@@ -194,6 +216,363 @@
                 {
                   "key": "BlogSection",
                   "component": "Blog"
+                }
+              ]
+            },
+            "about": {
+              "title": "About Us",
+              "pageName": "About Us",
+              "metadata": {
+                "title": "CarGlow - About Us"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "AboutSection",
+                  "component": "About"
+                },
+                {
+                  "key": "WorkProcessSection",
+                  "component": "WorkProcess"
+                },
+                {
+                  "key": "CtaSection",
+                  "component": "Cta"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
+              ]
+            },
+            "why_choose_us": {
+              "title": "Why Choose Us",
+              "pageName": "Why Choose Us",
+              "metadata": {
+                "title": "CarGlow - Why Choose Us"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "FeaturesSection",
+                  "component": "Features"
+                },
+                {
+                  "key": "WorkProcessSection",
+                  "component": "WorkProcess"
+                },
+                {
+                  "key": "CtaSection",
+                  "component": "Cta"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
+              ]
+            },
+            "mission_vision": {
+              "title": "Mission & Vision",
+              "pageName": "Mission & Vision",
+              "metadata": {
+                "title": "CarGlow - Mission & Vision"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "MissionSection",
+                  "component": "Mission"
+                },
+                {
+                  "key": "VisionSection",
+                  "component": "Vision"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
+              ]
+            },
+            "services": {
+              "title": "Our Services",
+              "pageName": "Services",
+              "metadata": {
+                "title": "CarGlow - Services"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "ServicesSection",
+                  "component": "Services"
+                },
+                {
+                  "key": "PricingSection",
+                  "component": "Pricing"
+                },
+                {
+                  "key": "CtaSection",
+                  "component": "Cta"
+                }
+              ]
+            },
+            "service_details": {
+              "title": "Service Details",
+              "pageName": "Service Details",
+              "metadata": {
+                "title": "CarGlow - Service Details"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "ServiceDetailsSection",
+                  "component": "ServiceDetails"
+                }
+              ]
+            },
+            "pricing": {
+              "title": "Pricing",
+              "pageName": "Pricing",
+              "metadata": {
+                "title": "CarGlow - Pricing"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "PricingSection",
+                  "component": "Pricing"
+                },
+                {
+                  "key": "WorkProcessSection",
+                  "component": "WorkProcess"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
+              ]
+            },
+            "testimonials": {
+              "title": "Testimonials",
+              "pageName": "Testimonials",
+              "metadata": {
+                "title": "CarGlow - Testimonials"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "TestimonialsSection",
+                  "component": "Testimonials"
+                }
+              ]
+            },
+            "blog": {
+              "title": "BLOGS",
+              "pageName": "Blogs",
+              "metadata": {
+                "title": "CarGlow - Blogs"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "BlogSection",
+                  "component": "Blog"
+                }
+              ]
+            },
+            "contact": {
+              "title": "Contact Us",
+              "pageName": "Contact Us",
+              "metadata": {
+                "title": "CarGlow - Contact Us"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "ContactSection",
+                  "component": "Contact"
+                }
+              ]
+            },
+            "team": {
+              "title": "Our Team",
+              "pageName": "Our Team",
+              "metadata": {
+                "title": "CarGlow - Our Team"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "TeamSection",
+                  "component": "Team"
+                }
+              ]
+            },
+            "doorstep_wash": {
+              "title": "DOORSTEP CAR WASH",
+              "pageName": "Doorstep Car Wash",
+              "metadata": {
+                "title": "CarGlow - Doorstep Car Wash"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "DoorstepAboutSection",
+                  "component": "DoorstepAbout"
+                },
+                {
+                  "key": "ServicesSection",
+                  "component": "Services"
+                },
+                {
+                  "key": "DoorstepHowItWorksSection",
+                  "component": "DoorstepHowItWorks"
+                },
+                {
+                  "key": "DoorstepBookingSection",
+                  "component": "DoorstepBooking"
+                }
+              ]
+            },
+            "packages": {
+              "title": "OUR PACKAGES",
+              "pageName": "Our Packages",
+              "metadata": {
+                "title": "CarGlow - Our Packages"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "PricingSection",
+                  "component": "Pricing"
+                }
+              ]
+            },
+            "not_found": {
+              "title": "404 Error",
+              "pageName": "404 Error",
+              "metadata": {
+                "title": "CarGlow - 404 Page Not Found"
+              },
+              "components": []
+            },
+            "team_details": {
+              "title": "TEAM DETAILS",
+              "pageName": "Team Details",
+              "metadata": {
+                "title": "CarGlow - Team Details"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "TeamDetailsSection",
+                  "component": "TeamDetails"
+                }
+              ]
+            },
+            "faqs": {
+              "title": "FAQS",
+              "pageName": "Faqs",
+              "metadata": {
+                "title": "CarGlow - FAQs"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "FaqsSection",
+                  "component": "Faqs"
+                }
+              ]
+            },
+            "privacy_policy": {
+              "title": "PRIVACY POLICY",
+              "pageName": "Privacy Policy",
+              "metadata": {
+                "title": "CarGlow - Privacy Policy"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "LegalPageSection",
+                  "component": "LegalPage"
+                }
+              ]
+            },
+            "terms_conditions": {
+              "title": "TERMS & CONDITIONS",
+              "pageName": "Terms & Conditions",
+              "metadata": {
+                "title": "CarGlow - Terms & Conditions"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "LegalPageSection",
+                  "component": "LegalPage"
+                }
+              ]
+            },
+            "refund_policy": {
+              "title": "REFUND POLICY",
+              "pageName": "Refund Policy",
+              "metadata": {
+                "title": "CarGlow - Refund Policy"
+              },
+              "components": [
+                {
+                  "key": "BreadcrumbSection",
+                  "component": "Breadcrumb"
+                },
+                {
+                  "key": "LegalPageSection",
+                  "component": "LegalPage"
                 }
               ]
             }
@@ -334,6 +713,28 @@
                 "text": "View All Services",
                 "href": "#"
               },
+              "sidebar": {
+                "services_title": "Our Services",
+                "enquiry": {
+                  "subtitle": "QUICK ENQUIRY",
+                  "title": "Book This Service",
+                  "description": "Fill in your details and we'll get back to you shortly.",
+                  "button_text": "Send Enquiry",
+                  "footer_text": "Your information is safe with us.",
+                  "form_placeholders": {
+                    "name": "Your Name *",
+                    "phone": "Phone Number *",
+                    "service": "Select Service",
+                    "message": "Your Message (Optional)"
+                  }
+                },
+                "help": {
+                  "title": "Need Help?",
+                  "description": "Have questions about this service? Our team is here to help.",
+                  "phone": "+1 00000000000",
+                  "time": "Mon - Sat: 9:00 AM - 7:00 PM"
+                }
+              },
               "items": [
                 {
                   "title": "Car Wash",
@@ -371,11 +772,53 @@
                   "icon": "LifeBuoy"
                 },
                 {
+                  "title": "Headlight Restoration",
+                  "description": "Restore clarity and improve visibility for a safer drive.",
+                  "image": "/services/2.png",
+                  "link": "#",
+                  "icon": "Car"
+                },
+                {
                   "title": "Ceramic Coating",
-                  "description": "Long-lasting protection and incredible gloss for your car.",
+                  "description": "Long-lasting protection with an ultra-glossy finish.",
                   "image": "/services/1.png",
                   "link": "#",
                   "icon": "Sparkles"
+                },
+                {
+                  "title": "Scratch Removal",
+                  "description": "Remove minor scratches and bring back the original shine.",
+                  "image": "/services/3.png",
+                  "link": "#",
+                  "icon": "LifeBuoy"
+                },
+                {
+                  "title": "Leather Restoration",
+                  "description": "Condition and restore leather seats to a supple, new feel.",
+                  "image": "/services/2.png",
+                  "link": "#",
+                  "icon": "Armchair"
+                },
+                {
+                  "title": "Glass Treatment",
+                  "description": "Repel water and improve visibility during heavy rain.",
+                  "image": "/services/1.png",
+                  "link": "#",
+                  "icon": "Sparkles"
+                },
+                {
+                  "title": "Odor Removal",
+                  "description": "Eliminate tough odors for a fresh smelling interior.",
+                  "image": "/services/4.png",
+                  "link": "#",
+                  "icon": "Car"
+                },
+                {
+                  "title": "Express Wash",
+                  "description": "A quick but thorough wash for people on the go.",
+                  "image": "/services/5.png",
+                  "link": "#",
+                  "icon": "Settings2"
                 }
               ]
             },
@@ -458,7 +901,7 @@
                     }
                   ],
                   "button": {
-                    "text": "BOOK THIS PACKAGE \u2192",
+                    "text": "BOOK THIS PACKAGE →",
                     "href": "#"
                   }
                 },
@@ -496,7 +939,7 @@
                     }
                   ],
                   "button": {
-                    "text": "BOOK THIS PACKAGE \u2192",
+                    "text": "BOOK THIS PACKAGE →",
                     "href": "#"
                   }
                 },
@@ -534,7 +977,7 @@
                     }
                   ],
                   "button": {
-                    "text": "BOOK THIS PACKAGE \u2192",
+                    "text": "BOOK THIS PACKAGE →",
                     "href": "#"
                   }
                 }
@@ -587,6 +1030,27 @@
                   "role": "Verified Client",
                   "avatar": "/testimonails/6.png",
                   "rating": 5
+                },
+                {
+                  "text": "Great quality service at a reasonable price. The staff is skilled and polite. I am extremely happy with the results and will definitely come back again.",
+                  "author": "Amit Verma",
+                  "role": "Noida",
+                  "avatar": "/testimonails/3.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Amazing experience! From booking to delivery, everything was smooth. My car shines like never before. Highly recommended!",
+                  "author": "Priya Sharma",
+                  "role": "Gurgaon",
+                  "avatar": "/testimonails/2.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Excellent service and attention to detail! My car looks brand new. The team is professional, friendly and truly cares about customer satisfaction.",
+                  "author": "Rahul Mehta",
+                  "role": "New Delhi",
+                  "avatar": "/testimonails/1.png",
+                  "rating": 5
                 }
               ]
             },
@@ -594,7 +1058,7 @@
               "title_line1": "Get a Quote for Your",
               "title_highlight": "Car Care Service",
               "description": "Contact us today to schedule your next appointment or to learn more about our services.",
-              "phone": "+1 800 555 1234",
+              "phone": "+1 00000000000",
               "button": {
                 "text": "Get a Quote",
                 "href": "#"
@@ -609,29 +1073,1340 @@
               "posts": [
                 {
                   "title": "5 Easy Car Care Tips to Keep Your Car Looking New",
-                  "description": "Simple maintenance steps you can do at home to preserve your car's appearance.",
+                  "description": "Simple yet effective tips to maintain your car's appearance and protect its value for years to come.",
                   "image": "/blog/1.png",
-                  "date": "12 Oct 2026",
-                  "category": "Car Care Tips",
+                  "date": "12 AUG 2025",
+                  "category": "CAR CARE TIPS",
                   "link": "#"
                 },
                 {
                   "title": "Why Interior Detailing Matters for a Healthier Drive",
-                  "description": "Learn how a clean interior improves air quality and enhances your driving experience.",
+                  "description": "A clean interior not only looks good but also creates a healthier and more comfortable driving experience.",
                   "image": "/blog/2.png",
-                  "date": "28 Sep 2026",
-                  "category": "Detailing Guide",
+                  "date": "28 JUL 2025",
+                  "category": "DETAILING GUIDE",
                   "link": "#"
                 },
                 {
-                  "title": "Easy to Protect Your Car's Paint from Harsh Weather",
-                  "description": "Discover the best products and methods to shield your car's exterior from the elements.",
+                  "title": "How to Protect Your Car's Paint from Harsh Weather",
+                  "description": "Learn practical ways to shield your car's paint from UV rays, rain and dust for a long-lasting shine.",
                   "image": "/blog/3.png",
-                  "date": "15 Sep 2026",
-                  "category": "Paint Protection",
+                  "date": "15 JUL 2025",
+                  "category": "PAINT PROTECTION",
+                  "link": "#"
+                },
+                {
+                  "title": "5 Easy Car Care Tips to Keep Your Car Looking New",
+                  "description": "Simple yet effective tips to maintain your car's appearance and protect its value for years to come.",
+                  "image": "/blog/1.png",
+                  "date": "12 AUG 2025",
+                  "category": "CAR CARE TIPS",
+                  "link": "#"
+                },
+                {
+                  "title": "Why Interior Detailing Matters for a Healthier Drive",
+                  "description": "A clean interior not only looks good but also creates a healthier and more comfortable driving experience.",
+                  "image": "/blog/2.png",
+                  "date": "28 JUL 2025",
+                  "category": "DETAILING GUIDE",
+                  "link": "#"
+                },
+                {
+                  "title": "How to Protect Your Car's Paint from Harsh Weather",
+                  "description": "Learn practical ways to shield your car's paint from UV rays, rain and dust for a long-lasting shine.",
+                  "image": "/blog/3.png",
+                  "date": "15 JUL 2025",
+                  "category": "PAINT PROTECTION",
+                  "link": "#"
+                },
+                {
+                  "title": "5 Easy Car Care Tips to Keep Your Car Looking New",
+                  "description": "Simple yet effective tips to maintain your car's appearance and protect its value for years to come.",
+                  "image": "/blog/1.png",
+                  "date": "12 AUG 2025",
+                  "category": "CAR CARE TIPS",
+                  "link": "#"
+                },
+                {
+                  "title": "Why Interior Detailing Matters for a Healthier Drive",
+                  "description": "A clean interior not only looks good but also creates a healthier and more comfortable driving experience.",
+                  "image": "/blog/2.png",
+                  "date": "28 JUL 2025",
+                  "category": "DETAILING GUIDE",
+                  "link": "#"
+                },
+                {
+                  "title": "How to Protect Your Car's Paint from Harsh Weather",
+                  "description": "Learn practical ways to shield your car's paint from UV rays, rain and dust for a long-lasting shine.",
+                  "image": "/blog/3.png",
+                  "date": "15 JUL 2025",
+                  "category": "PAINT PROTECTION",
                   "link": "#"
                 }
               ]
+            },
+            "mission": {
+              "subtitle": "OUR MISSION",
+              "title_line1": "Driven by Care,",
+              "title_highlight": "Committed to Excellence",
+              "description": "Our mission is to deliver high-quality car wash and detailing services that keep every vehicle looking its best. We are committed to using the right techniques, premium products, and a customer-first approach to ensure cleaner, healthier, and longer-lasting vehicles.",
+              "image": "/img/mission.png"
+            },
+            "vision": {
+              "subtitle": "OUR VISION",
+              "title_line1": "A Cleaner Tomorrow",
+              "title_highlight": "For Every Journey",
+              "description": "Our vision is to be the most trusted and preferred car wash and detailing brand, known for exceptional service, innovation, and care. We aim to set new standards in vehicle care and create a cleaner, brighter, and more confident driving experience for every customer.",
+              "image": "/img/vision.png"
+            },
+            "contact": {
+              "subtitle": "GET IN TOUCH",
+              "title_line1": "Contact Us For",
+              "title_highlight": "Any Query",
+              "description": "Have any questions or need to book an appointment? Feel free to reach out to us. We are here to help you.",
+              "info": [
+                {
+                  "icon": "MapPin",
+                  "title": "Our Address",
+                  "text": "123 Street, New York, NY 10001"
+                },
+                {
+                  "icon": "Phone",
+                  "title": "Call Us",
+                  "text": "+1 00000000000"
+                },
+                {
+                  "icon": "Mail",
+                  "title": "Email Us",
+                  "text": "info@carglow.com"
+                }
+              ],
+              "form": {
+                "title": "Send a Message",
+                "button": "Submit Message"
+              }
+            },
+            "team": {
+              "subtitle": "OUR TEAM",
+              "title_line1": "Meet Our",
+              "title_highlight": "Experts",
+              "description": "Our skilled and experienced team is dedicated to delivering the highest standards of car care and customer satisfaction.",
+              "follow_me_text": "Follow Me",
+              "members": [
+                {
+                  "slug": "eng-david-alexon",
+                  "name": "Eng David Alexon",
+                  "designation": "Engine Expert",
+                  "description": "Specializes in engine diagnostics, repair and performance tuning with precision and care.",
+                  "image": "/team/1.jpg",
+                  "social": {
+                    "facebook": "https://www.facebook.com/",
+                    "twitter": "https://x.com/",
+                    "pinterest": "https://www.pinterest.com/",
+                    "behance": "https://www.behance.net/"
+                  }
+                },
+                {
+                  "slug": "anjelina-watson",
+                  "name": "Anjelina Watson",
+                  "designation": "Engine Expert",
+                  "description": "Expert in engine systems, ensuring reliable performance and smoother driving experiences.",
+                  "image": "/team/2.jpg",
+                  "social": {
+                    "facebook": "https://www.facebook.com/",
+                    "twitter": "https://x.com/",
+                    "pinterest": "https://www.pinterest.com/",
+                    "behance": "https://www.behance.net/"
+                  }
+                },
+                {
+                  "slug": "james-ramirez",
+                  "name": "James Ramirez",
+                  "designation": "Support Engineer",
+                  "description": "Provides technical support and maintenance solutions to keep your vehicle in top condition.",
+                  "image": "/team/3.jpg",
+                  "social": {
+                    "facebook": "https://www.facebook.com/",
+                    "twitter": "https://x.com/",
+                    "pinterest": "https://www.pinterest.com/",
+                    "behance": "https://www.behance.net/"
+                  }
+                },
+                {
+                  "slug": "justin-goldman",
+                  "name": "Justin Goldman",
+                  "designation": "Engine Expert",
+                  "description": "Focused on delivering high-quality engine care with advanced tools and expertise.",
+                  "image": "/team/4.jpg",
+                  "social": {
+                    "facebook": "https://www.facebook.com/",
+                    "twitter": "https://x.com/",
+                    "pinterest": "https://www.pinterest.com/",
+                    "behance": "https://www.behance.net/"
+                  }
+                }
+              ]
+            },
+            "service_details": [
+              {
+                "slug": "car-wash",
+                "title": "Car Wash",
+                "subtitle": "A cleaner exterior for a brighter drive.",
+                "description": "Our exterior car wash service is designed to remove dirt, dust, and road grime, giving your vehicle a fresh and polished look.",
+                "heroImage": "/services/1.png",
+                "benefits": [
+                  {
+                    "icon": "Droplet",
+                    "title": "Deep Cleaning",
+                    "description": "Removes dirt and grime effectively."
+                  },
+                  {
+                    "icon": "Leaf",
+                    "title": "Safe Products",
+                    "description": "Gentle on your vehicle's paint."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Long Lasting Shine",
+                    "description": "Keeps your car looking new."
+                  },
+                  {
+                    "icon": "Clock",
+                    "title": "Quick & Convenient",
+                    "description": "Doorstep service at your schedule."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Pre-Rinse",
+                    "description": "Loosens dust and dirt."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Hand Wash",
+                    "description": "Deep cleaning with premium shampoo."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Rinse & Dry",
+                    "description": "Spot-free finish with microfiber towels."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Final Check",
+                    "description": "Ensures a perfect shine."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "interior-detailing",
+                "title": "Interior Detailing",
+                "subtitle": "Breathe new life into your vehicle's cabin.",
+                "description": "Our interior detailing goes beyond a simple vacuum. We deeply clean, sanitize, and condition every surface, ensuring a healthier and more luxurious driving environment.",
+                "heroImage": "/services/2.png",
+                "benefits": [
+                  {
+                    "icon": "Wind",
+                    "title": "Allergen Removal",
+                    "description": "Eliminates dust and allergens."
+                  },
+                  {
+                    "icon": "Shield",
+                    "title": "UV Protection",
+                    "description": "Protects dashboard and trims."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Stain Removal",
+                    "description": "Lifts tough stains from fabrics."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Fresh Scent",
+                    "description": "Leaves a clean, neutral aroma."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Vacuum & Prep",
+                    "description": "Thorough vacuuming of all areas."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Deep Shampoo",
+                    "description": "Extracting dirt from carpets/seats."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Surface Cleaning",
+                    "description": "Wiping and sanitizing panels."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Conditioning",
+                    "description": "Applying protective conditioners."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "paint-protection",
+                "title": "Paint Protection",
+                "subtitle": "Preserve your car's flawless finish.",
+                "description": "Shield your vehicle's exterior from harsh weather, road debris, and UV rays with our advanced paint protection film and sealants.",
+                "heroImage": "/services/3.png",
+                "benefits": [
+                  {
+                    "icon": "ShieldCheck",
+                    "title": "Armor Defense",
+                    "description": "Blocks scratches and rock chips."
+                  },
+                  {
+                    "icon": "Sun",
+                    "title": "UV Resistance",
+                    "description": "Prevents paint fading over time."
+                  },
+                  {
+                    "icon": "Droplets",
+                    "title": "Hydrophobic",
+                    "description": "Repels water and mud easily."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "High Gloss",
+                    "description": "Enhances the natural paint shine."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Decontamination",
+                    "description": "Removing all surface impurities."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Paint Correction",
+                    "description": "Buffing out minor imperfections."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Application",
+                    "description": "Carefully applying the protection layer."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Curing",
+                    "description": "Allowing the sealant to bond perfectly."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "engine-cleaning",
+                "title": "Engine Cleaning",
+                "subtitle": "A clean engine runs cooler and longer.",
+                "description": "Grease and dirt buildup can hide leaks and trap heat. Our engine bay detailing safely degreases and dresses your engine compartment for a pristine look.",
+                "heroImage": "/services/4.png",
+                "benefits": [
+                  {
+                    "icon": "Thermometer",
+                    "title": "Cooler Running",
+                    "description": "Helps dissipate engine heat."
+                  },
+                  {
+                    "icon": "Search",
+                    "title": "Leak Detection",
+                    "description": "Makes spotting fluid leaks easy."
+                  },
+                  {
+                    "icon": "Wrench",
+                    "title": "Safe Methods",
+                    "description": "Electrical components are protected."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Showroom Look",
+                    "description": "Restores plastics and hoses."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Preparation",
+                    "description": "Covering sensitive electronics."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Degreasing",
+                    "description": "Breaking down heavy oil and grime."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Rinsing",
+                    "description": "Low-pressure wash to clear debris."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Dressing",
+                    "description": "Applying non-greasy protectant."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "tyre-rim-care",
+                "title": "Tyre & Rim Care",
+                "subtitle": "Make your wheels the center of attention.",
+                "description": "Brake dust and road grime can permanently damage your rims. We meticulously clean and protect your wheels, leaving tyres deep black and rims sparkling.",
+                "heroImage": "/services/5.png",
+                "benefits": [
+                  {
+                    "icon": "Circle",
+                    "title": "Brake Dust Removal",
+                    "description": "Safely dissolves corrosive dust."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Rim Protection",
+                    "description": "Coating prevents future buildup."
+                  },
+                  {
+                    "icon": "Sun",
+                    "title": "UV Tire Dressing",
+                    "description": "Prevents tire cracking and fading."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Sling-Free",
+                    "description": "No messy tire shine sling on paint."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Chemical Soak",
+                    "description": "Loosening stubborn brake dust."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Agitation",
+                    "description": "Brushing barrels and lug nuts."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Deep Cleaning",
+                    "description": "Scrubbing tire sidewalls."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Dressing",
+                    "description": "Applying tire shine and rim sealant."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "headlight-restoration",
+                "title": "Headlight Restoration",
+                "subtitle": "Restore clarity and nighttime visibility.",
+                "description": "Cloudy, yellowed headlights are a safety hazard and ruin your car's appearance. Our restoration process brings back factory clarity and seals the lens.",
+                "heroImage": "/services/2.png",
+                "benefits": [
+                  {
+                    "icon": "Eye",
+                    "title": "Better Visibility",
+                    "description": "Improves night driving safety."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Aesthetic Boost",
+                    "description": "Makes your car look years newer."
+                  },
+                  {
+                    "icon": "Shield",
+                    "title": "Long-Lasting",
+                    "description": "UV sealant prevents re-yellowing."
+                  },
+                  {
+                    "icon": "CheckCircle2",
+                    "title": "Cost Effective",
+                    "description": "Cheaper than replacing housings."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Taping",
+                    "description": "Protecting surrounding paintwork."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Wet Sanding",
+                    "description": "Removing the oxidized outer layer."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Polishing",
+                    "description": "Restoring optical clarity to the lens."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Sealing",
+                    "description": "Applying UV-resistant ceramic coat."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "ceramic-coating",
+                "title": "Ceramic Coating",
+                "subtitle": "The ultimate armor for your vehicle.",
+                "description": "Ceramic coating bonds with your paint at a molecular level, providing years of protection against environmental damage while delivering an unmatched, glass-like gloss.",
+                "heroImage": "/services/1.png",
+                "benefits": [
+                  {
+                    "icon": "ShieldCheck",
+                    "title": "Extreme Durability",
+                    "description": "Lasts for years, not months."
+                  },
+                  {
+                    "icon": "Droplets",
+                    "title": "Self-Cleaning",
+                    "description": "Dirt and water slide right off."
+                  },
+                  {
+                    "icon": "Sun",
+                    "title": "Chemical Resistance",
+                    "description": "Protects against bird drops & sap."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Mirror Finish",
+                    "description": "Deep, reflective gloss."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Prep Wash",
+                    "description": "Stripping old waxes and sealants."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Paint Correction",
+                    "description": "Flawless polishing of the clear coat."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Panel Prep",
+                    "description": "Wiping down with alcohol solutions."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Coating",
+                    "description": "Hand-applying the liquid ceramic."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "scratch-removal",
+                "title": "Scratch Removal",
+                "subtitle": "Erase blemishes and restore perfection.",
+                "description": "Swirl marks, scuffs, and light scratches dull your car's finish. Our multi-stage compounding and polishing process levels the clear coat for a flawless look.",
+                "heroImage": "/services/3.png",
+                "benefits": [
+                  {
+                    "icon": "Sparkles",
+                    "title": "Flawless Finish",
+                    "description": "Removes unsightly swirl marks."
+                  },
+                  {
+                    "icon": "Sun",
+                    "title": "Restored Color",
+                    "description": "Brings back the deep, rich paint hue."
+                  },
+                  {
+                    "icon": "Shield",
+                    "title": "Safe Techniques",
+                    "description": "We measure paint thickness first."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Enhanced Value",
+                    "description": "Increases your vehicle's resale value."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Assessment",
+                    "description": "Measuring paint depth and damage."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Compounding",
+                    "description": "Heavy cutting to remove scratches."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Polishing",
+                    "description": "Refining the finish to a high gloss."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Protection",
+                    "description": "Sealing the newly exposed clear coat."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "leather-restoration",
+                "title": "Leather Restoration",
+                "subtitle": "Revive the luxury feel of your cabin.",
+                "description": "Over time, leather becomes stiff, cracked, and discolored. We deep clean, rehydrate, and protect your leather surfaces to restore their soft, supple feel.",
+                "heroImage": "/services/2.png",
+                "benefits": [
+                  {
+                    "icon": "Droplet",
+                    "title": "Deep Hydration",
+                    "description": "Prevents future cracking."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Stain Removal",
+                    "description": "Lifts dye transfer and grime."
+                  },
+                  {
+                    "icon": "Shield",
+                    "title": "UV Block",
+                    "description": "Stops sun fading and damage."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Natural Finish",
+                    "description": "No greasy or slippery residue left."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Vacuuming",
+                    "description": "Removing abrasive dirt from seams."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Gentle Scrub",
+                    "description": "Using PH-balanced leather cleaners."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Conditioning",
+                    "description": "Massaging premium creams into leather."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Buffing",
+                    "description": "Removing excess for a matte finish."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "glass-treatment",
+                "title": "Glass Treatment",
+                "subtitle": "Crystal clear vision in any weather.",
+                "description": "Water spots and road film obscure your vision. We polish your glass and apply hydrophobic coatings so rain flies right off your windshield.",
+                "heroImage": "/services/1.png",
+                "benefits": [
+                  {
+                    "icon": "Eye",
+                    "title": "Clear Vision",
+                    "description": "Safer driving in heavy rain."
+                  },
+                  {
+                    "icon": "Droplets",
+                    "title": "Water Repellent",
+                    "description": "Rain beads up and rolls off."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Spot Removal",
+                    "description": "Eliminates hard water mineral stains."
+                  },
+                  {
+                    "icon": "Clock",
+                    "title": "Less Wiping",
+                    "description": "Reduces dependency on wipers."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Deep Clean",
+                    "description": "Removing bugs and heavy road film."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Clay Bar",
+                    "description": "Extracting embedded contaminants."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Glass Polish",
+                    "description": "Buffing out hard water spots."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Coating",
+                    "description": "Applying a durable rain repellent."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "odor-removal",
+                "title": "Odor Removal",
+                "subtitle": "Breathe fresh, clean air again.",
+                "description": "Spills, smoke, and pets leave lingering smells. We don't just mask odors; our ozone treatments and enzymatic cleaners destroy the bacteria causing them.",
+                "heroImage": "/services/4.png",
+                "benefits": [
+                  {
+                    "icon": "Wind",
+                    "title": "Total Eradication",
+                    "description": "Destroys smells at the source."
+                  },
+                  {
+                    "icon": "ShieldCheck",
+                    "title": "Bacteria Killer",
+                    "description": "Sanitizes the entire cabin."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Chemical Free",
+                    "description": "Safe ozone treatment methods."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Fresh Cabin",
+                    "description": "Leaves a neutral, clean scent."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Source Removal",
+                    "description": "Finding and cleaning the spill/stain."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Enzyme Treat",
+                    "description": "Applying bacteria-killing solutions."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Ozone Machine",
+                    "description": "Running O3 gas through the AC system."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Airing Out",
+                    "description": "Ventilating the vehicle thoroughly."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              },
+              {
+                "slug": "express-wash",
+                "title": "Express Wash",
+                "subtitle": "A spotless car, back on the road fast.",
+                "description": "Short on time? Our express wash delivers a thorough exterior clean and a quick interior spruce-up so you can get back to your day looking great.",
+                "heroImage": "/services/5.png",
+                "benefits": [
+                  {
+                    "icon": "Clock",
+                    "title": "Lightning Fast",
+                    "description": "Completed in under 30 minutes."
+                  },
+                  {
+                    "icon": "Sparkles",
+                    "title": "Quality Wash",
+                    "description": "No harsh automated brushes."
+                  },
+                  {
+                    "icon": "Droplet",
+                    "title": "Spot-Free",
+                    "description": "Dried properly to prevent water marks."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Great Value",
+                    "description": "Affordable maintenance cleaning."
+                  }
+                ],
+                "process": [
+                  {
+                    "number": "01",
+                    "title": "Foam Bath",
+                    "description": "Quickly lifting surface dirt."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Hand Wash",
+                    "description": "Safe microfiber mitt wash."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Rinse & Dry",
+                    "description": "Fast drying with forced air."
+                  },
+                  {
+                    "number": "04",
+                    "title": "Quick Vacuum",
+                    "description": "Rapid interior floor mat vacuum."
+                  }
+                ],
+                "gallery": [
+                  "/services/1.png",
+                  "/services/2.png",
+                  "/services/3.png",
+                  "/services/4.png",
+                  "/services/5.png",
+                  "/services/2.png"
+                ]
+              }
+            ],
+            "team_details": [
+              {
+                "slug": "eng-david-alexon",
+                "name": "Eng David Alexon",
+                "designation": "Engine Expert",
+                "image": "/team/1.jpg",
+                "social": {
+                  "facebook": "https://www.facebook.com/",
+                  "twitter": "https://x.com/",
+                  "pinterest": "https://www.pinterest.com/",
+                  "behance": "https://www.behance.net/"
+                },
+                "yearsOfExperience": "10+",
+                "position": "Senior Car Detailing Specialist",
+                "experience": "10+ Years",
+                "specialization": "Exterior & Interior Detailing, Paint Protection",
+                "location": "Delhi, India",
+                "availability": "Mon - Sat (9:00 AM - 6:00 PM)",
+                "aboutSubtitle": "ABOUT ALEXON",
+                "aboutTitle": "Passionate About",
+                "aboutTitleHighlight": "Car Care",
+                "aboutDescription": [
+                  "He has been a part of the AutoCare team for over a decade, bringing expertise, dedication, and a keen eye for detail to every vehicle he works on. His focus is always on customer satisfaction and maintaining the highest standards of quality.",
+                  "He believes that a clean car is not just about appearance, but also about preserving its value and performance. He continuously upgrades his skills and stays updated with the latest detailing techniques and products to provide the best service possible."
+                ],
+                "skills": [
+                  {
+                    "name": "Exterior Detailing",
+                    "percentage": 95
+                  },
+                  {
+                    "name": "Interior Cleaning",
+                    "percentage": 90
+                  },
+                  {
+                    "name": "Paint Protection",
+                    "percentage": 88
+                  },
+                  {
+                    "name": "Customer Service",
+                    "percentage": 93
+                  },
+                  {
+                    "name": "Attention to Detail",
+                    "percentage": 96
+                  }
+                ],
+                "contact": {
+                  "title": "Get In Touch",
+                  "description": "Feel free to reach out to discuss your car care needs or ask any questions.",
+                  "phone": "+91 98765 43210",
+                  "email": "contact@carglow.com",
+                  "address": "Delhi, India",
+                  "buttonText": "Schedule a Service",
+                  "buttonLink": "/contact"
+                }
+              },
+              {
+                "slug": "anjelina-watson",
+                "name": "Anjelina Watson",
+                "designation": "Engine Expert",
+                "image": "/team/2.jpg",
+                "social": {
+                  "facebook": "https://www.facebook.com/",
+                  "twitter": "https://x.com/",
+                  "pinterest": "https://www.pinterest.com/",
+                  "behance": "https://www.behance.net/"
+                },
+                "yearsOfExperience": "10+",
+                "position": "Senior Car Detailing Specialist",
+                "experience": "10+ Years",
+                "specialization": "Exterior & Interior Detailing, Paint Protection",
+                "location": "Delhi, India",
+                "availability": "Mon - Sat (9:00 AM - 6:00 PM)",
+                "aboutSubtitle": "ABOUT WATSON",
+                "aboutTitle": "Passionate About",
+                "aboutTitleHighlight": "Car Care",
+                "aboutDescription": [
+                  "He has been a part of the AutoCare team for over a decade, bringing expertise, dedication, and a keen eye for detail to every vehicle he works on. His focus is always on customer satisfaction and maintaining the highest standards of quality.",
+                  "He believes that a clean car is not just about appearance, but also about preserving its value and performance. He continuously upgrades his skills and stays updated with the latest detailing techniques and products to provide the best service possible."
+                ],
+                "skills": [
+                  {
+                    "name": "Exterior Detailing",
+                    "percentage": 95
+                  },
+                  {
+                    "name": "Interior Cleaning",
+                    "percentage": 90
+                  },
+                  {
+                    "name": "Paint Protection",
+                    "percentage": 88
+                  },
+                  {
+                    "name": "Customer Service",
+                    "percentage": 93
+                  },
+                  {
+                    "name": "Attention to Detail",
+                    "percentage": 96
+                  }
+                ],
+                "contact": {
+                  "title": "Get In Touch",
+                  "description": "Feel free to reach out to discuss your car care needs or ask any questions.",
+                  "phone": "+91 98765 43210",
+                  "email": "contact@carglow.com",
+                  "address": "Delhi, India",
+                  "buttonText": "Schedule a Service",
+                  "buttonLink": "/contact"
+                }
+              },
+              {
+                "slug": "james-ramirez",
+                "name": "James Ramirez",
+                "designation": "Support Engineer",
+                "image": "/team/3.jpg",
+                "social": {
+                  "facebook": "https://www.facebook.com/",
+                  "twitter": "https://x.com/",
+                  "pinterest": "https://www.pinterest.com/",
+                  "behance": "https://www.behance.net/"
+                },
+                "yearsOfExperience": "10+",
+                "position": "Senior Car Detailing Specialist",
+                "experience": "10+ Years",
+                "specialization": "Exterior & Interior Detailing, Paint Protection",
+                "location": "Delhi, India",
+                "availability": "Mon - Sat (9:00 AM - 6:00 PM)",
+                "aboutSubtitle": "ABOUT RAMIREZ",
+                "aboutTitle": "Passionate About",
+                "aboutTitleHighlight": "Car Care",
+                "aboutDescription": [
+                  "He has been a part of the AutoCare team for over a decade, bringing expertise, dedication, and a keen eye for detail to every vehicle he works on. His focus is always on customer satisfaction and maintaining the highest standards of quality.",
+                  "He believes that a clean car is not just about appearance, but also about preserving its value and performance. He continuously upgrades his skills and stays updated with the latest detailing techniques and products to provide the best service possible."
+                ],
+                "skills": [
+                  {
+                    "name": "Exterior Detailing",
+                    "percentage": 95
+                  },
+                  {
+                    "name": "Interior Cleaning",
+                    "percentage": 90
+                  },
+                  {
+                    "name": "Paint Protection",
+                    "percentage": 88
+                  },
+                  {
+                    "name": "Customer Service",
+                    "percentage": 93
+                  },
+                  {
+                    "name": "Attention to Detail",
+                    "percentage": 96
+                  }
+                ],
+                "contact": {
+                  "title": "Get In Touch",
+                  "description": "Feel free to reach out to discuss your car care needs or ask any questions.",
+                  "phone": "+91 98765 43210",
+                  "email": "contact@carglow.com",
+                  "address": "Delhi, India",
+                  "buttonText": "Schedule a Service",
+                  "buttonLink": "/contact"
+                }
+              },
+              {
+                "slug": "justin-goldman",
+                "name": "Justin Goldman",
+                "designation": "Engine Expert",
+                "image": "/team/4.jpg",
+                "social": {
+                  "facebook": "https://www.facebook.com/",
+                  "twitter": "https://x.com/",
+                  "pinterest": "https://www.pinterest.com/",
+                  "behance": "https://www.behance.net/"
+                },
+                "yearsOfExperience": "10+",
+                "position": "Senior Car Detailing Specialist",
+                "experience": "10+ Years",
+                "specialization": "Exterior & Interior Detailing, Paint Protection",
+                "location": "Delhi, India",
+                "availability": "Mon - Sat (9:00 AM - 6:00 PM)",
+                "aboutSubtitle": "ABOUT GOLDMAN",
+                "aboutTitle": "Passionate About",
+                "aboutTitleHighlight": "Car Care",
+                "aboutDescription": [
+                  "He has been a part of the AutoCare team for over a decade, bringing expertise, dedication, and a keen eye for detail to every vehicle he works on. His focus is always on customer satisfaction and maintaining the highest standards of quality.",
+                  "He believes that a clean car is not just about appearance, but also about preserving its value and performance. He continuously upgrades his skills and stays updated with the latest detailing techniques and products to provide the best service possible."
+                ],
+                "skills": [
+                  {
+                    "name": "Exterior Detailing",
+                    "percentage": 95
+                  },
+                  {
+                    "name": "Interior Cleaning",
+                    "percentage": 90
+                  },
+                  {
+                    "name": "Paint Protection",
+                    "percentage": 88
+                  },
+                  {
+                    "name": "Customer Service",
+                    "percentage": 93
+                  },
+                  {
+                    "name": "Attention to Detail",
+                    "percentage": 96
+                  }
+                ],
+                "contact": {
+                  "title": "Get In Touch",
+                  "description": "Feel free to reach out to discuss your car care needs or ask any questions.",
+                  "phone": "+91 98765 43210",
+                  "email": "contact@carglow.com",
+                  "address": "Delhi, India",
+                  "buttonText": "Schedule a Service",
+                  "buttonLink": "/contact"
+                }
+              }
+            ],
+            "doorstep_about": {
+              "subtitle": "Convenience First",
+              "title_line1": "Professional Car Wash At",
+              "title_highlight": "Your Doorstep",
+              "description": "Experience the ultimate convenience with our premium doorstep car wash and detailing services. We bring our own water, power, and professional-grade equipment right to your location, saving you time and hassle while delivering a showroom shine.",
+              "image": "/img/doorstep.jpg",
+              "features": [
+                {
+                  "icon": "Home",
+                  "label": "At Your Location"
+                },
+                {
+                  "icon": "Clock",
+                  "label": "Saves You Time"
+                },
+                {
+                  "icon": "ShieldCheck",
+                  "label": "Trusted Professionals"
+                },
+                {
+                  "icon": "Leaf",
+                  "label": "Eco-Friendly Products"
+                }
+              ]
+            },
+            "doorstep_how_it_works": {
+              "subtitle": "Simple Process",
+              "title_line1": "How Doorstep Service",
+              "title_highlight": "Works",
+              "description": "Booking a doorstep car wash has never been easier. Follow these simple steps and we will take care of the rest.",
+              "steps": [
+                {
+                  "num": "01",
+                  "title": "Book Appointment",
+                  "description": "Choose your preferred date, time, and service package.",
+                  "icon": "Calendar"
+                },
+                {
+                  "num": "02",
+                  "title": "We Arrive",
+                  "description": "Our fully equipped team arrives at your provided location.",
+                  "icon": "MapPin"
+                },
+                {
+                  "num": "03",
+                  "title": "We Clean",
+                  "description": "We perform a thorough, professional wash and detail.",
+                  "icon": "Sparkles"
+                },
+                {
+                  "num": "04",
+                  "title": "You Enjoy",
+                  "description": "Enjoy your sparkling clean car without leaving home.",
+                  "icon": "CheckCircle2"
+                }
+              ]
+            },
+            "doorstep_booking": {
+              "subtitle": "BOOK YOUR",
+              "title_line1": "Doorstep",
+              "title_highlight": "Car Wash",
+              "description": "Fill out the form and we will get in touch to confirm your booking.",
+              "image": "/img/vision.png",
+              "badge_title": "A Cleaner Car",
+              "badge_subtitle": "Happier Journeys",
+              "badge_icon": "Car",
+              "features": [
+                {
+                  "icon": "Leaf",
+                  "title": "Eco-Friendly Products",
+                  "description": "Safe for your car and the environment."
+                },
+                {
+                  "icon": "Cog",
+                  "title": "Trained Professionals",
+                  "description": "Skilled and experienced team."
+                },
+                {
+                  "icon": "ThumbsUp",
+                  "title": "Premium Care",
+                  "description": "High-quality cleaning and detailing."
+                },
+                {
+                  "icon": "Headset",
+                  "title": "Hassle-Free Service",
+                  "description": "We come to you, anywhere in the city."
+                }
+              ]
+            },
+            "faqs": {
+              "subtitle": "FAQS",
+              "title_line1": "Frequently Asked ",
+              "title_highlight": "Questions",
+              "description": "Find quick answers to common questions about our car wash and detailing services.",
+              "left_subtitle": "HAVE QUESTIONS?",
+              "left_title_line1": "We have Got ",
+              "left_title_highlight": "You Covered",
+              "left_description": "Here are some of the most common questions our customers ask. If you still need help, feel free to contact our team.",
+              "image": "/img/doorstep.jpg",
+              "badge_icon": "Headphones",
+              "badge_title": "Need More Help?",
+              "badge_subtitle": "Our team is always ready to assist you.",
+              "items": [
+                {
+                  "question": "What is included in a doorstep car wash service?",
+                  "answer": "Our doorstep car wash includes exterior washing, wheel and tyre cleaning, window cleaning and a basic interior vacuum (as per selected package). You can also choose additional detailing services if needed."
+                },
+                {
+                  "question": "How long does the car wash take?",
+                  "answer": "It depends on the package selected, but typically ranges from 45 minutes to 2 hours."
+                },
+                {
+                  "question": "Do you bring your own water and equipment?",
+                  "answer": "Yes, our vans are fully equipped with water tanks, generators, and professional detailing equipment."
+                },
+                {
+                  "question": "Is your service safe for all car types?",
+                  "answer": "Absolutely. We use pH-neutral, safe chemicals and microfiber towels to ensure a scratch-free finish for all vehicles."
+                },
+                {
+                  "question": "Can I schedule a service at my home or office?",
+                  "answer": "Yes, we can perform the service anywhere as long as there is enough space to park our van near your vehicle."
+                },
+                {
+                  "question": "What payment methods do you accept?",
+                  "answer": "We accept credit/debit cards, UPI, and cash payments after the service is completed."
+                },
+                {
+                  "question": "Can I reschedule or cancel my booking?",
+                  "answer": "Yes, you can reschedule or cancel up to 24 hours before your appointment without any cancellation fees."
+                },
+                {
+                  "question": "Do you offer any discounts or packages?",
+                  "answer": "We have membership plans and seasonal offers. Please check our pricing page or contact our team for details."
+                }
+              ]
+            },
+            "privacy_policy": {
+              "sections": [
+                {
+                  "title": "Introduction",
+                  "content": "At AutoCare, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+                },
+                {
+                  "title": "Information We Collect",
+                  "content": "We may collect personal information such as your name, phone number, email address, location, and service preferences when you:",
+                  "list": [
+                    "Fill out a contact or booking form",
+                    "Subscribe to our updates",
+                    "Communicate with us via phone, email, or in person",
+                    "Use our website or services"
+                  ]
+                },
+                {
+                  "title": "How We Use Your Information",
+                  "content": "We use the information we collect to:",
+                  "list": [
+                    "Provide and improve our services",
+                    "Respond to your queries and appointments",
+                    "Send important updates or service reminders (only if you opt-in)",
+                    "Enhance your overall customer experience"
+                  ]
+                },
+                {
+                  "title": "Sharing Your Information",
+                  "content": "We do not sell or rent your personal information to third parties. We may share your information only when required by law or with trusted service providers who help us operate our website and business (such as payment processors or communication tools)."
+                },
+                {
+                  "title": "Data Security",
+                  "content": "We take reasonable measures to protect your personal information from unauthorized access, misuse, or disclosure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security."
+                },
+                {
+                  "title": "Your Rights",
+                  "content": "You have the right to access, update, or delete your personal information. If you wish to make any changes or have any concerns about your data, please contact us using the details provided on our Contact Us page."
+                },
+                {
+                  "title": "Changes to This Policy",
+                  "content": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with the updated effective date. We encourage you to review this policy periodically."
+                }
+              ],
+              "last_updated": "August 20, 2026"
+            },
+            "terms_conditions": {
+              "sections": [
+                {
+                  "title": "Acceptance of Terms",
+                  "content": "By accessing and using our website and services, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use our services."
+                },
+                {
+                  "title": "Service Provision",
+                  "content": "We strive to provide the highest quality car wash and detailing services. However, we reserve the right to refuse service to anyone for any reason at any time."
+                },
+                {
+                  "title": "Pricing and Payment",
+                  "content": "All prices are subject to change without prior notice. Payment is due upon completion of the service unless otherwise agreed. We accept cash, credit/debit cards, and UPI payments.",
+                  "list": [
+                    "Prices may vary based on vehicle size and condition",
+                    "Additional charges may apply for excessively dirty vehicles",
+                    "Cancellations must be made at least 2 hours in advance"
+                  ]
+                },
+                {
+                  "title": "Liability",
+                  "content": "While we take utmost care of your vehicle, we are not liable for pre-existing damage, loose parts, or items left inside the vehicle. Please remove all valuables before our service begins."
+                }
+              ],
+              "last_updated": "August 20, 2026"
+            },
+            "refund_policy": {
+              "sections": [
+                {
+                  "title": "Refund Eligibility",
+                  "content": "We want you to be completely satisfied with our services. If you are not satisfied, please let us know before the technician leaves your premises. Refunds are considered on a case-by-case basis."
+                },
+                {
+                  "title": "Cancellation Policy",
+                  "content": "You can cancel or reschedule your booking free of charge up to 2 hours before the scheduled time. Cancellations made within 2 hours may be subject to a cancellation fee."
+                },
+                {
+                  "title": "Processing Refunds",
+                  "content": "If a refund is approved, it will be processed and credited to your original method of payment within 5-7 business days."
+                }
+              ],
+              "last_updated": "August 20, 2026"
             }
           }
         }

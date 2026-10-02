@@ -27,12 +27,12 @@ export default function Home() {
         <Hero data={sections.hero} />
         <About data={sections.about} />
         <WorkProcess data={sections.work_process} />
-        <Services data={sections.services} />
+        <Services data={sections.services} bgClass="bg-zinc-50" />
         <Features data={sections.features} />
-        <Pricing data={sections.pricing} />
-        <Testimonials data={sections.testimonials} />
+        <Pricing data={sections.pricing} bgClass="bg-zinc-50" />
+        <Testimonials data={sections.testimonials} bgClass="bg-white" />
         <Cta data={sections.cta} />
-        <Blog data={sections.blog} />
+        <Blog data={sections.blog} bgClass="bg-zinc-50" />
       </main>
 
       <Footer data={common.Footer} />

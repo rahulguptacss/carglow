@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PricingSectionData } from '../../types';
 import { Check } from 'lucide-react';
 
-export default function Pricing({ data }: { data: PricingSectionData }) {
+export default function Pricing({ data, bgClass = "bg-[#fdfdfd]" }: { data: PricingSectionData, bgClass?: string }) {
   if (!data) return null;
 
   const packages = data.packages && data.packages.length > 0 ? data.packages : [
@@ -12,7 +12,7 @@ export default function Pricing({ data }: { data: PricingSectionData }) {
   ];
 
   return (
-    <section className="py-[40px] sm:py-[50px] bg-[#fdfdfd]">
+    <section className={`py-[40px] sm:py-[50px] ${bgClass}`}>
       <div className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-10">
         
         {/* =================================================
