@@ -7,44 +7,7 @@ import { FaFacebookF, FaPinterestP, FaBehance, FaLinkedinIn, FaYoutube } from 'r
 import { FaXTwitter, FaInstagram } from 'react-icons/fa6';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-
-export interface TeamDetailProps {
-  data: {
-    slug: string;
-    name: string;
-    designation: string;
-    image: string;
-    yearsOfExperience?: string;
-    position?: string;
-    experience?: string;
-    specialization?: string;
-    location?: string;
-    availability?: string;
-    aboutSubtitle?: string;
-    aboutTitle?: string;
-    aboutDescription?: string[];
-    skills?: { name: string; percentage: number }[];
-    contact?: {
-      title: string;
-      description: string;
-      phone: string;
-      email: string;
-      address: string;
-      buttonText: string;
-      buttonLink?: string;
-    };
-    social?: {
-      facebook?: string;
-      twitter?: string;
-      pinterest?: string;
-      behance?: string;
-      instagram?: string;
-      linkedin?: string;
-      youtube?: string;
-      [key: string]: string | undefined;
-    };
-  };
-}
+import { TeamDetailProps } from '../../types';
 
 export default function TeamDetails({ data }: TeamDetailProps) {
   if (!data) return null;
@@ -167,6 +130,8 @@ export default function TeamDetails({ data }: TeamDetailProps) {
                         <motion.a
                           key={sIdx}
                           href={link as string}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.1, y: -2 }}
                           whileTap={{ scale: 0.95 }}
                           className="w-[36px] h-[36px] bg-[#f1f5f9] text-[#0f172a] rounded-full flex items-center justify-center hover:bg-[#910A1D] hover:text-white transition-colors"
@@ -210,20 +175,32 @@ export default function TeamDetails({ data }: TeamDetailProps) {
                       className="space-y-6 mb-8"
                     >
                       <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} className="flex items-start gap-4">
-                        <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="w-[44px] h-[44px] rounded-full bg-[#0f172a] flex items-center justify-center shrink-0 transition-colors cursor-pointer">
-                          <Phone size={18} className="text-white" />
-                        </motion.div>
+                        <a href={`tel:${data.contact.phone.replace(/[^0-9+]/g, '')}`}>
+                          <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="w-[44px] h-[44px] rounded-full bg-[#0f172a] flex items-center justify-center shrink-0 transition-colors cursor-pointer">
+                            <Phone size={18} className="text-white" />
+                          </motion.div>
+                        </a>
                         <div className="mt-2">
-                          <p className="text-[16px] font-bold text-[#0f172a]">{data.contact.phone}</p>
+                          <p className="text-[16px] font-bold text-[#0f172a]">
+                            <a href={`tel:${data.contact.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-[#910A1D] transition-colors">
+                              {data.contact.phone}
+                            </a>
+                          </p>
                         </div>
                       </motion.div>
 
                       <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} className="flex items-start gap-4">
-                        <motion.div whileHover={{ scale: 1.1, rotate: -5 }} className="w-[44px] h-[44px] rounded-full bg-[#64748b] hover:bg-[#910A1D] flex items-center justify-center shrink-0 transition-colors cursor-pointer">
-                          <Mail size={18} className="text-white" />
-                        </motion.div>
+                        <a href={`mailto:${data.contact.email}`}>
+                          <motion.div whileHover={{ scale: 1.1, rotate: -5 }} className="w-[44px] h-[44px] rounded-full bg-[#64748b] hover:bg-[#910A1D] flex items-center justify-center shrink-0 transition-colors cursor-pointer">
+                            <Mail size={18} className="text-white" />
+                          </motion.div>
+                        </a>
                         <div className="mt-2">
-                          <p className="text-[16px] font-bold text-[#0f172a]">{data.contact.email}</p>
+                          <p className="text-[16px] font-bold text-[#0f172a]">
+                            <a href={`mailto:${data.contact.email}`} className="hover:text-[#910A1D] transition-colors">
+                              {data.contact.email}
+                            </a>
+                          </p>
                         </div>
                       </motion.div>
 
@@ -265,7 +242,7 @@ export default function TeamDetails({ data }: TeamDetailProps) {
                   </div>
                   <h2 className="text-[28px] lg:text-[36px] font-black text-[#0f172a] mb-5 leading-tight">
                     {data.aboutTitle || "Passionate About"}<br />
-                    <span className="text-[#910A1D]">{(data as any).aboutTitleHighlight || "Car Care"}</span>
+                    <span className="text-[#910A1D]">{data.aboutTitleHighlight}</span>
                   </h2>
                   {data.aboutDescription?.map((para, pIdx) => (
                     <p key={pIdx} className="text-[14px] text-[#4a5568] leading-[1.8] mb-4">

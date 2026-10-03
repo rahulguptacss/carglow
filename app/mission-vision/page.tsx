@@ -6,12 +6,14 @@ import Vision from '../../components/sections/Vision';
 import Testimonials from '../../components/sections/Testimonials';
 import Footer from '../../components/sections/Footer';
 import BackToTop from '../../components/ui/BackToTop';
+import { common, pages, sections } from '../../components/types';
 
-import data from '../../components/data/data.json';
+export const metadata = {
+  title: pages.mission_vision.metadata.title,
+};
 
 export default function MissionVisionPage() {
-  const common = data.common;
-  const sections = data.categories.Automotive.templateComponents["template-1"].sections;
+  const pageData = pages.mission_vision;
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-zinc-900 font-sans">
@@ -19,10 +21,10 @@ export default function MissionVisionPage() {
 
       <main className="flex-1 w-full">
         <Breadcrumb
-          title="Mission & Vision"
+          title={pageData.title}
           breadcrumb={[
             { label: 'Home', href: '/' },
-            { label: 'Mission & Vision' }
+            { label: pageData.pageName }
           ]}
           backgroundImage="/banner/2.png"
         />
@@ -33,7 +35,6 @@ export default function MissionVisionPage() {
       </main>
 
       <Footer data={common.Footer} />
-
       <BackToTop />
     </div>
   );

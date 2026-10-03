@@ -2,6 +2,7 @@
 import React from 'react';
 import { Calendar, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { DoorstepHowItWorksProps } from '../../types';
 
 const iconMap: Record<string, React.ReactNode> = {
   Calendar: <Calendar size={32} />,
@@ -10,15 +11,7 @@ const iconMap: Record<string, React.ReactNode> = {
   CheckCircle2: <CheckCircle2 size={32} />
 };
 
-export interface DoorstepHowItWorksData {
-  subtitle: string;
-  title_line1: string;
-  title_highlight: string;
-  description: string;
-  steps: Array<{ num: string; title: string; description: string; icon: string }>;
-}
-
-export default function DoorstepHowItWorks({ data }: { data: DoorstepHowItWorksData }) {
+export default function DoorstepHowItWorks({ data }: DoorstepHowItWorksProps) {
   if (!data) return null;
   return (
     <section className="pt-6 lg:pt-8 pb-6 lg:pb-10 bg-[#f8f9fa]">

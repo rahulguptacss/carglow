@@ -6,34 +6,7 @@ import { motion } from 'framer-motion';
 import { FaFacebookF, FaPinterestP, FaBehance } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import Link from 'next/link';
-
-interface SocialLinks {
-  facebook?: string;
-  twitter?: string;
-  pinterest?: string;
-  behance?: string;
-  [key: string]: string | undefined;
-}
-
-interface TeamMember {
-  slug?: string;
-  name: string;
-  designation: string;
-  description: string;
-  image: string;
-  social?: SocialLinks;
-}
-
-interface TeamProps {
-  data: {
-    subtitle?: string;
-    title_line1?: string;
-    title_highlight?: string;
-    description?: string;
-    follow_me_text?: string;
-    members?: TeamMember[];
-  };
-}
+import { TeamProps } from '../../types';
 
 export default function Team({ data }: TeamProps) {
   if (!data) return null;
@@ -77,7 +50,7 @@ export default function Team({ data }: TeamProps) {
             >
               {/* Image Container */}
               <div className="relative w-full sm:w-[40%] xl:w-[35%] h-[320px] sm:h-auto rounded-[12px] overflow-hidden">
-                <Link href={member.slug ? `/team/${member.slug}` : '#'}>
+                <Link href={member.slug ? `/team/${member.slug}` : '/team'}>
                   <Image 
                     src={member.image} 
                     alt={member.name} 
@@ -90,7 +63,7 @@ export default function Team({ data }: TeamProps) {
               {/* Content Container */}
               <div className="w-full sm:w-[60%] xl:w-[65%] flex flex-col justify-center py-2 sm:pr-2">
                 <h3 className="text-[22px] sm:text-[24px] font-bold text-[#0f172a] mb-1">
-                  <Link href={member.slug ? `/team/${member.slug}` : '#'} className="hover:text-[#910A1D] transition-colors">
+                  <Link href={member.slug ? `/team/${member.slug}` : '/team'} className="hover:text-[#910A1D] transition-colors">
                     {member.name}
                   </Link>
                 </h3>
@@ -112,7 +85,9 @@ export default function Team({ data }: TeamProps) {
                       return (
                         <motion.a 
                           key={sIdx} 
-                          href={link as string} 
+                          href={link as string}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ scale: 1.15 }}
                           whileTap={{ scale: 0.95 }}
                           className="w-[34px] h-[34px] bg-[#910A1D] text-white rounded-[6px] flex items-center justify-center hover:bg-[#720016] transition-colors"

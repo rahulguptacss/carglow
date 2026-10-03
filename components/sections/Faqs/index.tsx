@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Headset, Plus, Minus } from 'lucide-react';
+import { FaqsProps } from '../../types';
 
-export default function Faqs({ data }: { data: any }) {
+export default function Faqs({ data }: FaqsProps) {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   if (!data) return null;
@@ -103,7 +104,7 @@ export default function Faqs({ data }: { data: any }) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {data.items?.map((item: any, index: number) => {
+            {data.items?.map((item, index) => {
               const isOpen = openIndex === index;
               const numStr = (index + 1).toString().padStart(2, '0');
 

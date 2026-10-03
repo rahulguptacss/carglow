@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { pages } from '../components/types';
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -9,7 +10,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "CarGlow - Premium Car Wash & Detailing",
+  title: pages.home.metadata.title,
   description: "Premium car wash and detailing services to keep your vehicle looking its best.",
 };
 

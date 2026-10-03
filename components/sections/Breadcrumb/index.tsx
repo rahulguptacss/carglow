@@ -5,11 +5,7 @@ import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface BreadcrumbProps {
-  title: string;
-  breadcrumb: Array<{ label: string; href?: string }>;
-  backgroundImage?: string;
-}
+import { BreadcrumbProps } from '../../types';
 
 export default function Breadcrumb({ title, breadcrumb, backgroundImage = '/banner/1.png' }: BreadcrumbProps) {
   return (

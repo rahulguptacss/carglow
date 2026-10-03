@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Car, Phone, User, Mail, Calendar, MapPin, Clock, Lock, ArrowRight, Sparkles, Leaf } from 'lucide-react';
 import { FaLeaf, FaCog, FaThumbsUp, FaHeadset } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { DoorstepBookingProps } from '../../types';
+import Link from 'next/link';
 
 const iconMap: Record<string, React.ReactNode> = {
   Leaf: <FaLeaf size={38} />,
@@ -12,19 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Headset: <FaHeadset size={42} />
 };
 
-export interface DoorstepBookingData {
-  subtitle: string;
-  title_line1: string;
-  title_highlight: string;
-  description: string;
-  image: string;
-  badge_title: string;
-  badge_subtitle: string;
-  badge_icon: string;
-  features: Array<{ icon: string; title: string; description: string }>;
-}
-
-export default function DoorstepBooking({ data }: { data: DoorstepBookingData }) {
+export default function DoorstepBooking({ data }: DoorstepBookingProps) {
   if (!data) return null;
   return (
     <>
@@ -73,9 +63,9 @@ export default function DoorstepBooking({ data }: { data: DoorstepBookingData })
                     <input type="text" placeholder="Preferred Time" className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-md text-[14px] focus:outline-none focus:border-[#910A1D] focus:ring-1 focus:ring-[#910A1D] transition-all shadow-sm placeholder:text-gray-400" />
                   </div>
                 </div>
-                <button type="button" className="w-full bg-[#910A1D] hover:bg-[#720016] text-white py-[14px] rounded-md font-bold text-[16px] flex items-center justify-center gap-2 mt-4 transition-all group">
+                <Link href="/enquiry" className="w-full bg-[#910A1D] hover:bg-[#720016] text-white py-[14px] rounded-md font-bold text-[16px] flex items-center justify-center gap-2 mt-4 transition-all group">
                   Book Now <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
                 <p className="text-center text-[13px] text-gray-500 mt-2 flex items-center justify-center gap-1.5 font-medium">
                   <Lock className="w-3.5 h-3.5" /> Your information is safe with us.
                 </p>

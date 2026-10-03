@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { HeroSectionData } from "../../types";
+import { HeroProps } from "../../types";
 import { ArrowRight, ArrowLeft, ShieldCheck, Droplets, Car, Users, Award, Star, Sparkles } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
   Sparkles,
 };
 
-export default function Hero({ data }: { data: HeroSectionData }) {
+export default function Hero({ data }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = data.slides && data.slides.length > 0 ? data.slides : [{
@@ -172,14 +172,14 @@ export default function Hero({ data }: { data: HeroSectionData }) {
               {/* Buttons */}
               <motion.div variants={itemVariants} className="flex flex-row items-center gap-3 md:gap-5 w-full sm:w-auto">
                 <a
-                  href={currentSlideData.primary_button?.href || "#"}
+                  href={currentSlideData.primary_button?.href || "/get-a-quote"}
                   className="flex flex-1 sm:flex-none items-center justify-center gap-1 md:gap-2 bg-[#910A1D] hover:bg-[#720016] text-white px-3 md:px-8 py-[14px] md:py-4 font-semibold text-[13px] md:text-[16px] rounded-[4px] transition-all"
                 >
                   {currentSlideData.primary_button?.text || "Book Now"}
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 stroke-[2]" />
                 </a>
                 <a
-                  href={currentSlideData.secondary_button?.href || "#"}
+                  href={currentSlideData.secondary_button?.href || "/services"}
                   className="flex flex-1 sm:flex-none items-center justify-center gap-1 md:gap-2 border border-white hover:bg-white hover:text-black text-white px-3 md:px-8 py-[14px] md:py-4 font-semibold text-[13px] md:text-[16px] rounded-[4px] transition-all"
                 >
                   {currentSlideData.secondary_button?.text || "Learn More"}

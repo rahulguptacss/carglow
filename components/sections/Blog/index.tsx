@@ -2,27 +2,26 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { BlogSectionData } from '../../types';
+import Link from 'next/link';
+import { BlogProps } from '../../types';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const toSlug = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export default function Blog({ 
   data, 
   bgClass = "bg-white",
   showPagination = false,
   itemsPerPage = 3
-}: { 
-  data: BlogSectionData, 
-  bgClass?: string,
-  showPagination?: boolean,
-  itemsPerPage?: number
-}) {
+}: BlogProps) {
   // Use screenshot description if needed, or fallback to data.json
   const desc = "Stay informed with expert tips, maintenance advice and the latest updates from the world of car care and detailing.";
 
   const allPosts = data?.posts && data.posts.length > 0 ? data.posts : [
-    { title: "5 Easy Car Care Tips to Keep Your Car Looking New", description: "Simple maintenance steps you can do at home to preserve your car's appearance.", image: "/blog/1.png", date: "12 Oct 2026", category: "Car Care Tips", link: "#" },
-    { title: "Why Interior Detailing Matters for a Healthier Drive", description: "Learn how a clean interior improves air quality and enhances your driving experience.", image: "/blog/2.png", date: "28 Sep 2026", category: "Detailing Guide", link: "#" }
+    { title: "5 Easy Car Care Tips to Keep Your Car Looking New", description: "Simple maintenance steps you can do at home to preserve your car's appearance.", image: "/blog/1.png", date: "12 Oct 2026", category: "Car Care Tips", link: "/blog/5-easy-car-care-tips-to-keep-your-car-looking-new" },
+    { title: "Why Interior Detailing Matters for a Healthier Drive", description: "Learn how a clean interior improves air quality and enhances your driving experience.", image: "/blog/2.png", date: "28 Sep 2026", category: "Detailing Guide", link: "/blog/why-interior-detailing-matters-for-a-healthier-drive" }
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -71,6 +70,9 @@ export default function Blog({
             const day = dateParts[0] || '12';
             const month = dateParts[1] || 'AUG';
             const year = dateParts[2] || '2025';
+            const href = post.link && post.link !== '#'
+              ? post.link
+              : `/blog/${post.slug || toSlug(post.title)}`;
             
             return (
               <motion.div 
@@ -113,7 +115,7 @@ export default function Blog({
                   
                   {/* Title */}
                   <h3 className="mb-[15px] text-[22px] font-extrabold text-[#111820] leading-[1.3] tracking-tight group-hover:text-[#680512] transition-colors line-clamp-2">
-                    <a href={post.link}>{post.title}</a>
+                    <Link href={href}>{post.title}</Link>
                   </h3>
                   
                   {/* Excerpt */}
@@ -122,9 +124,9 @@ export default function Blog({
                   </p>
                   
                   {/* Read More */}
-                  <a href={post.link} className="inline-flex items-center gap-[8px] text-[#680512] text-[14px] font-bold uppercase tracking-[0.5px] hover:text-[#910A1D] transition-colors mt-auto w-max">
+                  <Link href={href} className="inline-flex items-center gap-[8px] text-[#680512] text-[14px] font-bold uppercase tracking-[0.5px] hover:text-[#910A1D] transition-colors mt-auto w-max">
                     READ MORE <ArrowRight className="h-[18px] w-[18px]" strokeWidth={2} />
-                  </a>
+                  </Link>
                   
                 </div>
               </motion.div>

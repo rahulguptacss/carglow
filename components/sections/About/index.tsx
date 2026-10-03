@@ -15,7 +15,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
-import { AboutSectionData } from '../../types';
+import { AboutProps } from '../../types';
 
 const iconMap: Record<string, React.ReactNode> = {
   CalendarCheck: <CalendarCheck />,
@@ -46,7 +46,7 @@ const leftVariants: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-export default function About({ data, hideCta = false }: { data: AboutSectionData, hideCta?: boolean }) {
+export default function About({ data, hideCta = false }: AboutProps) {
   return (
     <section className="relative w-full overflow-hidden border-t border-zinc-200 bg-white">
       <div className="mx-auto max-w-[1350px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-[70px] xl:px-12">
@@ -140,42 +140,23 @@ export default function About({ data, hideCta = false }: { data: AboutSectionDat
 
             {/* Features Grid */}
             <div className="mb-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              {data.steps && data.steps.length > 0 ? (
-                data.steps.map((step, index) => (
-                  <motion.div key={index} variants={itemVariants}>
-                    <Feature
-                      icon={iconMap[step.icon] || <Gem />}
-                      title={step.title}
-                      description={step.description}
-                      number={step.number}
-                    />
-                  </motion.div>
-                ))
-              ) : (
-                <>
-                  <motion.div variants={itemVariants}>
-                    <Feature
-                      icon={<Gem />}
-                      title="Premium Service"
-                      description="High-quality car care with professional touch."
-                    />
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <Feature
-                      icon={<ShieldCheck />}
-                      title="Trusted Professionals"
-                      description="Skilled team you can rely on for the best results."
-                    />
-                  </motion.div>
-                </>
-              )}
+              {data.steps.map((step, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <Feature
+                    icon={iconMap[step.icon] || <Gem />}
+                    title={step.title}
+                    description={step.description}
+                    number={step.number}
+                  />
+                </motion.div>
+              ))}
             </div>
 
             {/* CTA Button */}
             {!hideCta && (
               <motion.div variants={itemVariants}>
                 <a
-                  href="/about-us"
+                  href="/about"
                   className="inline-flex w-full sm:w-auto h-[54px] items-center justify-center gap-4 rounded-[6px] bg-[#910A1D] px-8 text-[15px] font-medium text-white no-underline transition-all duration-300 hover:bg-[#7a0818]"
                 >
                   <span>More About Us</span>

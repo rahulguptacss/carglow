@@ -1,22 +1,27 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FooterData } from '../../types';
+import Link from 'next/link';
+import { FooterProps, sections, toSlug } from '../../types';
 import { MapPin, Phone, Mail, Share2, ChevronRight, ChevronDown } from 'lucide-react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const socialIconMap: Record<string, React.ElementType> = {
-  Facebook: FaFacebookF, 
-  Twitter: FaTwitter, 
-  Instagram: FaInstagram, 
+  Facebook: FaFacebookF,
+  Twitter: FaXTwitter,
+  X: FaXTwitter,
+  Instagram: FaInstagram,
   Linkedin: FaLinkedinIn,
   Youtube: FaYoutube
 };
 
-export default function Footer({ data }: { data: FooterData }) {
+export default function Footer({ data }: FooterProps) {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    contact: true // Contact Us is open by default on mobile based on the screenshot
+    contact: true
   });
+
+  const serviceItems = sections.services.items.slice(0, 6);
 
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({
@@ -26,7 +31,7 @@ export default function Footer({ data }: { data: FooterData }) {
   };
 
   return (
-    <footer className="relative bg-[#0d0d0d] overflow-hidden pt-[80px]">
+    <footer className="relative bg-[#0d0d0d] overflow-hidden pt-[50px]">
       
       {/* Background Image */}
       <div 
@@ -40,7 +45,7 @@ export default function Footer({ data }: { data: FooterData }) {
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-10">
         
         {/* Top Section - 4 Columns */}
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-0 lg:gap-[0px] pb-[40px] lg:pb-[70px]">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-0 lg:gap-[0px] pb-[28px] lg:pb-[40px]">
           
           {/* Column 1: Brand Info */}
           <div className="flex flex-col items-center lg:items-start lg:w-[25%] lg:pr-[40px] mb-[30px] lg:mb-0">
@@ -62,7 +67,10 @@ export default function Footer({ data }: { data: FooterData }) {
                 return (
                   <a 
                     key={idx} 
-                    href={social.href} 
+                    href={social.href && social.href !== '#' ? social.href : '/contact'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.icon}
                     className="flex h-[42px] w-[42px] lg:h-[38px] lg:w-[38px] items-center justify-center rounded-full border border-[#910A1D] text-white hover:bg-[#910A1D] transition-all"
                   >
                     <Icon size={16} className="lg:scale-[0.85]" />
@@ -111,14 +119,17 @@ export default function Footer({ data }: { data: FooterData }) {
             <div className={`grid transition-all duration-300 ease-in-out lg:!grid-rows-[1fr] lg:!opacity-100 lg:!mt-0 ${openSections['our_services'] ? 'grid-rows-[1fr] opacity-100 mt-[20px]' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
               <div className="overflow-hidden">
                 <ul className="flex flex-col space-y-[15px]">
-                  {data.our_services.map((link, idx) => (
-                    <li key={idx}>
-                      <a href={link.href} className="group flex items-center gap-[10px] text-[15px] text-[#9ca3af] hover:text-white transition-colors whitespace-nowrap">
-                        <ChevronRight className="h-[14px] w-[14px] text-[#910A1D] group-hover:translate-x-1 transition-transform" strokeWidth={3} /> 
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
+                  {serviceItems.map((service) => {
+                    const slug = toSlug(service.title);
+                    return (
+                      <li key={service.title}>
+                        <Link href={`/services/${slug}`} className="group flex items-center gap-[10px] text-[15px] text-[#9ca3af] hover:text-white transition-colors whitespace-nowrap">
+                          <ChevronRight className="h-[14px] w-[14px] text-[#910A1D] group-hover:translate-x-1 transition-transform" strokeWidth={3} />
+                          {service.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -139,6 +150,7 @@ export default function Footer({ data }: { data: FooterData }) {
                 <ul className="flex flex-col space-y-[25px] lg:space-y-[22px]">
                   
                   <li className="flex items-center gap-[15px]">
+                    <a href={`tel:${data.contact.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-[15px]">
                     <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-full bg-[#910A1D]">
                       <Phone className="h-[16px] w-[16px] text-white" />
                     </div>
@@ -146,9 +158,11 @@ export default function Footer({ data }: { data: FooterData }) {
                       <span className="text-[13px] text-[#9ca3af] mb-[2px]">Call Us</span>
                       <span className="text-[14px] font-medium text-white whitespace-nowrap">{data.contact.phone}</span>
                     </div>
+                    </a>
                   </li>
                   
                   <li className="flex items-center gap-[15px]">
+                    <a href={`mailto:${data.contact.email}`} className="flex items-center gap-[15px]">
                     <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-full bg-[#910A1D]">
                       <Mail className="h-[16px] w-[16px] text-white" />
                     </div>
@@ -156,6 +170,7 @@ export default function Footer({ data }: { data: FooterData }) {
                       <span className="text-[13px] text-[#9ca3af] mb-[2px]">Email Us</span>
                       <span className="text-[14px] font-medium text-white">{data.contact.email}</span>
                     </div>
+                    </a>
                   </li>
                   
                   <li className="flex items-start gap-[15px]">
@@ -179,7 +194,7 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
         
       {/* Bottom Footer Border & Content */}
-      <div className="relative z-10 bg-[#0a0a0a] border-t-[3px] border-[#910A1D] py-[25px]">
+      <div className="relative z-10 bg-[#0a0a0a] border-t-[3px] border-[#910A1D] py-[16px]">
         <div className="mx-auto flex max-w-[1300px] flex-col items-center justify-between gap-[15px] px-6 sm:px-8 lg:px-10 md:flex-row">
           <p 
             className="text-[14px] text-[#9ca3af] text-center"
@@ -194,7 +209,7 @@ export default function Footer({ data }: { data: FooterData }) {
             <div className="h-[14px] w-[2px] bg-[#910A1D]"></div>
             <a href="/refund-policy" className="hover:text-white transition-colors whitespace-nowrap">Refund Policy</a>
             <div className="h-[14px] w-[2px] bg-[#910A1D] hidden sm:block"></div>
-            <a href="#" className="hover:text-white transition-colors whitespace-nowrap hidden sm:block">Sitemap</a>
+            <a href="/sitemap" className="hover:text-white transition-colors whitespace-nowrap hidden sm:block">Sitemap</a>
           </div>
         </div>
       </div>

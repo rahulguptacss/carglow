@@ -2,22 +2,21 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { CtaSectionData } from '../../types';
+import { CtaProps } from '../../types';
 import { Phone, ArrowRight } from 'lucide-react';
 
 export default function Cta({
   data,
-}: {
-  data: CtaSectionData;
-}) {
+}: CtaProps) {
   const subtitle = data?.subtitle || 'KEEP YOUR CAR LOOKING ITS BEST';
   const description = data?.description || 'Premium car wash & detailing services tailored to your needs. Clean. Protect. Drive Better.';
   const title_line1 = data?.title_line1 || 'Get a Quote for Your';
   const title_highlight = data?.title_highlight || 'Car Care Service';
   const buttonText = data?.button?.text || 'GET A QUOTE';
 
-  const phone = data?.phone || '+1 800 555 1234';
-  const buttonHref = data?.button?.href || '#';
+  const phone = data?.phone || '+1 00000000000';
+  const telHref = `tel:${phone.replace(/[^0-9+]/g, '')}`;
+  const buttonHref = data?.button?.href || '/get-a-quote';
   const image = data?.image || '/img/cta.png';
 
   return (
@@ -197,7 +196,7 @@ export default function Cta({
 
               {/* PHONE */}
 
-              <div className="flex items-center gap-[15px]">
+              <a href={telHref} className="flex items-center gap-[15px]">
 
                 <div
                   className="
@@ -253,7 +252,7 @@ export default function Cta({
 
                 </div>
 
-              </div>
+              </a>
 
 
               {/* GET QUOTE */}
@@ -421,7 +420,7 @@ export default function Cta({
 
           {/* Phone */}
 
-          <div className="mb-[25px] flex items-center gap-[14px]">
+          <a href={telHref} className="mb-[25px] flex items-center gap-[14px]">
 
             <div
               className="
@@ -455,7 +454,7 @@ export default function Cta({
 
             </div>
 
-          </div>
+          </a>
 
 
           {/* Button */}

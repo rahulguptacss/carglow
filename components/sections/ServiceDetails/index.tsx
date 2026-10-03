@@ -6,12 +6,7 @@ import Link from 'next/link';
 import { ChevronRight, ArrowRight, User, Phone, Car, Calendar, MessageSquare, Lock, PhoneCall, Droplet, Leaf, Sparkles, Clock, Droplets, Settings, CheckCircle2 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-interface ServiceDetailsProps {
-  data: any;
-  allServices: any[];
-  sidebarData?: any;
-}
+import { ServiceDetailsProps } from '../../types';
 
 export default function ServiceDetails({ data, allServices, sidebarData }: ServiceDetailsProps) {
   // Split title to highlight the second part
@@ -85,8 +80,9 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
 
             {/* Benefits / Features */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-10">
-              {data.benefits?.map((feature: any, index: number) => {
-                const IconComponent = (LucideIcons as any)[feature.icon] || Droplet;
+              {data.benefits?.map((feature, index) => {
+                const lucideIcons = LucideIcons as unknown as Record<string, React.ElementType>;
+                const IconComponent = lucideIcons[feature.icon] || Droplet;
                 const isFilled = ['Droplet', 'Leaf'].includes(feature.icon);
                 return (
                   <motion.div 
@@ -126,7 +122,7 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
               </h2>
 
               <div className="grid grid-cols-2 gap-y-10 gap-x-4 md:flex md:flex-row md:gap-0 justify-between items-start w-full relative">
-                {data.process?.map((step: any, index: number) => (
+                {data.process?.map((step, index) => (
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -173,7 +169,7 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
               </h2>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {data.gallery?.map((img: any, index: number) => (
+                {data.gallery?.map((img, index) => (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -348,9 +344,9 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
                     <MessageSquare className="absolute left-4 top-[14px] w-[18px] h-[18px] text-zinc-400" />
                     <textarea placeholder={sidebarData?.enquiry?.form_placeholders?.message || "Your Message (Optional)"} className="w-full h-[100px] pl-11 pr-4 pt-3 bg-white border border-zinc-200 rounded-md text-[14px] outline-none focus:border-[#910A1D] transition-colors resize-none"></textarea>
                   </div>
-                  <button type="button" className="w-full h-[50px] bg-[#910A1D] text-white font-bold text-[15px] rounded-md flex items-center justify-center gap-2 hover:bg-[#7a0818] transition-colors cursor-pointer">
+                  <Link href="/enquiry" className="w-full h-[50px] bg-[#910A1D] text-white font-bold text-[15px] rounded-md flex items-center justify-center gap-2 hover:bg-[#7a0818] transition-colors cursor-pointer">
                     {sidebarData?.enquiry?.button_text || "Send Enquiry"} <ChevronRight className="w-[18px] h-[18px]" />
-                  </button>
+                  </Link>
                   <p className="flex items-center justify-center gap-2 text-[12px] text-zinc-500 mt-3">
                     <Lock className="w-[14px] h-[14px]" /> {sidebarData?.enquiry?.footer_text || "Your information is safe with us."}
                   </p>
@@ -365,15 +361,15 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-[#F9F9F9] rounded-md p-8 border border-zinc-100 text-center"
               >
-                <div className="w-[60px] h-[60px] mx-auto bg-[#910A1D] rounded-full flex items-center justify-center mb-6">
+                <a href={`tel:${(sidebarData?.help?.phone || "+1 00000000000").replace(/[^0-9+]/g, '')}`} className="w-[60px] h-[60px] mx-auto bg-[#910A1D] rounded-full flex items-center justify-center mb-6">
                   <PhoneCall className="w-[24px] h-[24px] text-white" fill="currentColor" />
-                </div>
+                </a>
                 <h4 className="text-[20px] font-black text-[#111] mb-2">{sidebarData?.help?.title || "Need Help?"}</h4>
                 <p className="text-[14px] text-zinc-500 mb-6 max-w-[200px] mx-auto leading-relaxed">
                   {sidebarData?.help?.description || "Have questions about this service? Our team is here to help."}
                 </p>
-                <a href={`tel:${(sidebarData?.help?.phone || "+91 98765 43210").replace(/[^0-9+]/g, '')}`} className="block text-[22px] sm:text-[26px] font-black text-[#910A1D] mb-2 hover:text-[#7a0818] transition-colors">
-                  {sidebarData?.help?.phone || "+91 98765 43210"}
+                <a href={`tel:${(sidebarData?.help?.phone || "+1 00000000000").replace(/[^0-9+]/g, '')}`} className="block text-[22px] sm:text-[26px] font-black text-[#910A1D] mb-2 hover:text-[#7a0818] transition-colors">
+                  {sidebarData?.help?.phone || "+1 00000000000"}
                 </a>
                 <p className="text-[12px] text-zinc-500 font-medium">
                   {sidebarData?.help?.time || "Mon - Sat: 9:00 AM - 7:00 PM"}

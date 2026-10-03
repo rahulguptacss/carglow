@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
-import { FeaturesSectionData } from '../../types';
+import { FeaturesProps } from '../../types';
 
 import {
   Users,
@@ -96,9 +96,7 @@ const fadeRight: Variants = {
 
 export default function Features({
   data,
-}: {
-  data: FeaturesSectionData;
-}) {
+}: FeaturesProps) {
 
   const items = data.items && data.items.length > 0 ? data.items : [
     { title: 'Experienced Team', description: 'Skilled professionals with years of hands-on experience.', icon: 'Users' },

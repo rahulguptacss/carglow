@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
@@ -15,7 +16,7 @@ import {
   Mail,
 } from 'lucide-react';
 
-import { HeaderData } from '../../types';
+import { HeaderProps } from '../../types';
 
 const iconMap: Record<string, React.ElementType> = {
   MapPin,
@@ -24,7 +25,7 @@ const iconMap: Record<string, React.ElementType> = {
   Mail,
 };
 
-export default function Header({ data }: { data: HeaderData }) {
+export default function Header({ data }: HeaderProps) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -84,7 +85,7 @@ export default function Header({ data }: { data: HeaderData }) {
       <div className="lg:hidden h-[72px] w-full" />
       
       <motion.header
-        className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm"
+        className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm overflow-visible"
         initial="hidden"
         animate="visible"
         variants={headerVariants}
@@ -138,9 +139,19 @@ export default function Header({ data }: { data: HeaderData }) {
                           <span className="text-[#151515] font-bold text-[15px] leading-[20px]">
                             {info.label}
                           </span>
-                          <span className="text-[#5d6268] text-[14px] leading-[20px]">
-                            {info.value}
-                          </span>
+                          {info.icon === 'Mail' ? (
+                            <a href={`mailto:${info.value}`} className="text-[#5d6268] text-[14px] leading-[20px] hover:text-[#720016] transition-colors">
+                              {info.value}
+                            </a>
+                          ) : info.icon === 'Phone' ? (
+                            <a href={`tel:${info.value.replace(/[^0-9+]/g, '')}`} className="text-[#5d6268] text-[14px] leading-[20px] hover:text-[#720016] transition-colors">
+                              {info.value}
+                            </a>
+                          ) : (
+                            <span className="text-[#5d6268] text-[14px] leading-[20px]">
+                              {info.value}
+                            </span>
+                          )}
                         </div>
                       </div>
 
@@ -156,8 +167,8 @@ export default function Header({ data }: { data: HeaderData }) {
 
 
             {/* ================= BOOK WASH ================= */}
-            <a
-              href={data.button_link || '#'}
+            <Link
+              href={data.button_link || '/get-a-quote'}
               className="relative h-[86px] w-[285px] flex items-center justify-center gap-[15px] bg-[#720016] text-white no-underline group"
               style={{
                 clipPath: 'polygon(13% 0, 100% 0, 100% 100%, 0 100%)',
@@ -177,7 +188,7 @@ export default function Header({ data }: { data: HeaderData }) {
               >
                 <ArrowRight className="w-[20px] h-[20px]" strokeWidth={2} />
               </motion.div>
-            </a>
+            </Link>
 
           </div>
         </div>
@@ -190,7 +201,11 @@ export default function Header({ data }: { data: HeaderData }) {
             <nav className="flex items-center h-full gap-[55px] px-[40px]">
               {data.links?.map((link, idx) => {
                 const hasDropdown = link.sublinks && link.sublinks.length > 0;
-                const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+                const isActive = !link.href || link.href === '#'
+                  ? false
+                  : link.href === '/'
+                    ? pathname === '/'
+                    : pathname.startsWith(link.href);
 
                 return (
                   <div
@@ -235,7 +250,7 @@ export default function Header({ data }: { data: HeaderData }) {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 15 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-0 min-w-[200px] bg-[#11171d] border-t-[3px] border-[#720016] shadow-xl py-2 z-50 flex flex-col"
+                            className="absolute top-full left-0 mt-0 min-w-[200px] bg-[#11171d] border-t-[3px] border-[#720016] shadow-xl py-2 z-[100] flex flex-col pointer-events-auto"
                           >
                             {link.sublinks!.map((sub, sidx) => (
                               <motion.a
@@ -269,29 +284,32 @@ export default function Header({ data }: { data: HeaderData }) {
       <div className="lg:hidden">
 
         {/* MOBILE TOP */}
-        <div className="h-[72px] px-[20px] bg-[#720016] flex items-center justify-between">
-          <a href="/" className="flex items-center">
+        <div className="h-[72px] px-3 sm:px-4 bg-[#720016] flex items-center justify-between gap-2 min-w-0 overflow-hidden">
+          <a href="/" className="flex items-center min-w-0 flex-1 mr-1">
             <img
               src={data.logo_image || "/logo/logo.png"}
               alt={data.logo_text || 'CarGlow'}
-              className="h-[56px] w-auto max-w-[210px] object-contain"
+              className="h-[42px] sm:h-[50px] w-auto max-w-[118px] sm:max-w-[160px] object-contain object-left"
             />
           </a>
 
-          <div className="flex items-center gap-[20px]">
-            {/* Call Button */}
-            <a
-              href={`tel:${data.contact_info?.find(i => i.label.toLowerCase().includes('phone') || i.label.toLowerCase().includes('call'))?.value || '+1234567890'}`}
-              className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md flex-shrink-0"
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <Link
+              href={data.button_link || '/get-a-quote'}
+              className="h-[34px] px-2.5 sm:px-3 flex items-center gap-1.5 bg-white rounded-full text-[#720016] no-underline shadow-[0_4px_12px_rgba(0,0,0,0.18)] outline-none focus:outline-none select-none [&]:[-webkit-tap-highlight-color:transparent]"
             >
-              <Phone className="w-[16px] h-[16px] text-[#720016]" fill="currentColor" strokeWidth={0} />
-            </a>
+              <CalendarDays className="w-[13px] h-[13px] shrink-0" strokeWidth={2} />
+              <span className="text-[11px] sm:text-[12px] font-bold whitespace-nowrap">
+                {data.button_text || 'Get A Quote'}
+              </span>
+              <ArrowRight className="w-[12px] h-[12px] shrink-0" strokeWidth={2.2} />
+            </Link>
 
             {/* Menu Button */}
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex items-center justify-center text-white"
+              className="relative z-10 flex items-center justify-center text-white bg-transparent border-0 p-1 outline-none focus:outline-none active:bg-transparent select-none [&]:[-webkit-tap-highlight-color:transparent]"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
@@ -341,7 +359,11 @@ export default function Header({ data }: { data: HeaderData }) {
                 {data.links?.map((link, idx) => {
                   const hasDropdown = link.sublinks && link.sublinks.length > 0;
                   const isOpen = openMobileDropdowns[idx];
-                  const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+                  const isActive = !link.href || link.href === '#'
+                    ? false
+                    : link.href === '/'
+                      ? pathname === '/'
+                      : pathname.startsWith(link.href);
 
                   return (
                     <div key={idx} className="flex flex-col border-b border-white/10">
@@ -390,19 +412,6 @@ export default function Header({ data }: { data: HeaderData }) {
                     </div>
                   );
                 })}
-
-                {/* MOBILE BOOK WASH */}
-                <motion.a
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: (data.links?.length || 0) * 0.05 + 0.1 }}
-                  href={data.button_link || '#'}
-                  className="m-[15px] h-[50px] flex items-center justify-center gap-3 bg-[#720016] text-white font-semibold no-underline rounded"
-                >
-                  <CalendarDays className="w-5 h-5" />
-                  <span>{data.button_text || 'Book A Wash'}</span>
-                  <ArrowRight className="w-5 h-5" />
-                </motion.a>
 
               </nav>
             </motion.div>

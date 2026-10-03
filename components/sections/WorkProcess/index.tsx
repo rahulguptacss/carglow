@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Car, Droplets, Settings, Sparkles, ArrowRight } from 'lucide-react';
-import { WorkProcessSectionData } from '../../types';
+import { WorkProcessProps } from '../../types';
 
 const iconMap: Record<string, React.ReactNode> = {
   CarWash: <Car />,
@@ -25,7 +25,7 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-export default function WorkProcess({ data }: { data: WorkProcessSectionData }) {
+export default function WorkProcess({ data }: WorkProcessProps) {
   if (!data) return null;
 
   const steps = data.steps && data.steps.length > 0 ? data.steps : [
@@ -76,7 +76,7 @@ export default function WorkProcess({ data }: { data: WorkProcessSectionData }) 
           {/* Header Right / Button */}
           <motion.div variants={itemVariants} className="mt-2 w-full flex-shrink-0 md:mt-0 md:w-auto">
             <a
-              href={data.button?.href || '#'}
+              href={data.button?.href || '/get-a-quote'}
               className="inline-flex w-full h-[50px] items-center justify-center gap-3 bg-[#910A1D] px-8 text-[14px] font-semibold tracking-wider text-white transition-colors duration-300 hover:bg-[#7a0818] md:w-auto"
             >
               {data.button?.text || 'BOOK NOW'}

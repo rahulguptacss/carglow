@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaHome } from 'react-icons/fa';
+import { DoorstepAboutProps } from '../../types';
 
 const iconMap: Record<string, React.ReactNode> = {
   Home: <FaHome size={34} />,
@@ -23,16 +24,7 @@ const iconMap: Record<string, React.ReactNode> = {
   ),
 };
 
-export interface DoorstepAboutData {
-  subtitle: string;
-  title_line1: string;
-  title_highlight: string;
-  description: string;
-  image: string;
-  features: Array<{ icon: string; label: string }>;
-}
-
-export default function DoorstepAbout({ data }: { data: DoorstepAboutData }) {
+export default function DoorstepAbout({ data }: DoorstepAboutProps) {
   if (!data) return null;
   return (
     <section className="pt-12 pb-8 lg:pt-16 lg:pb-10 bg-zinc-50">

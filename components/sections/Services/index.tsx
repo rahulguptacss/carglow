@@ -8,7 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { EmblaCarouselType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { ArrowRight, Car, Armchair, Sparkles, Settings2, LifeBuoy, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ServicesSectionData } from '../../types';
+import { ServicesProps } from '../../types';
 
 const CarSeatIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -48,7 +48,7 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-export default function Services({ data, isGrid = false, itemsPerPage = 8, variant = 'default', showPagination = true, bgClass = "bg-white" }: { data: ServicesSectionData, isGrid?: boolean, itemsPerPage?: number, variant?: 'default' | 'doorstep', showPagination?: boolean, bgClass?: string }) {
+export default function Services({ data, isGrid = false, itemsPerPage = 8, variant = 'default', showPagination = true, bgClass = "bg-white" }: ServicesProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' }, [
     Autoplay({ delay: 3000, stopOnInteraction: false })
   ]);
@@ -137,7 +137,7 @@ export default function Services({ data, isGrid = false, itemsPerPage = 8, varia
             {!isGrid && (
               <div className="mt-4 flex-shrink-0 md:mt-0">
                 <Link
-                  href={data.button?.href || '#'}
+                  href={data.button?.href || '/services'}
                   className="inline-flex h-[54px] items-center justify-center gap-3 bg-[#8b0e1b] px-9 text-[12px] font-bold uppercase tracking-wider text-white transition-colors duration-300 hover:bg-[#700b15]"
                 >
                   {data.button?.text || 'VIEW ALL SERVICES'}

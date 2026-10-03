@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import { PricingSectionData } from '../../types';
+import { PricingProps } from '../../types';
 import { Check } from 'lucide-react';
 
-export default function Pricing({ data, bgClass = "bg-[#fdfdfd]" }: { data: PricingSectionData, bgClass?: string }) {
+export default function Pricing({ data, bgClass = "bg-[#fdfdfd]" }: PricingProps) {
   if (!data) return null;
 
   const packages = data.packages && data.packages.length > 0 ? data.packages : [
-    { name: 'SILVER PACKAGE', description: 'Essential Care\nfor a Cleaner Ride', price: '$49', period: '/Service', is_popular: false, image: '/price/1.png', features: [{ text: 'Exterior Hand Wash', included: true }], button: { text: 'BOOK THIS PACKAGE →', href: '#' } },
-    { name: 'GOLD PACKAGE', description: 'Complete Care\nInside & Out', price: '$79', period: '/Service', is_popular: true, image: '/price/2.png', features: [{ text: 'Deep Interior Cleaning', included: true }], button: { text: 'BOOK THIS PACKAGE →', href: '#' } }
+    { name: 'SILVER PACKAGE', description: 'Essential Care\nfor a Cleaner Ride', price: '$49', period: '/Service', is_popular: false, image: '/price/1.png', features: [{ text: 'Exterior Hand Wash', included: true }], button: { text: 'BOOK THIS PACKAGE →', href: '/get-a-quote' } },
+    { name: 'GOLD PACKAGE', description: 'Complete Care\nInside & Out', price: '$79', period: '/Service', is_popular: true, image: '/price/2.png', features: [{ text: 'Deep Interior Cleaning', included: true }], button: { text: 'BOOK THIS PACKAGE →', href: '/get-a-quote' } }
   ];
 
   return (
@@ -135,7 +135,7 @@ export default function Pricing({ data, bgClass = "bg-[#fdfdfd]" }: { data: Pric
                   
                   {/* Button */}
                   <a
-                    href={pkg.button.href}
+                    href={pkg.button.href || '/get-a-quote'}
                     className={`flex h-[48px] w-full items-center justify-center rounded-[6px] text-[12px] font-bold uppercase tracking-[1px] transition-colors duration-300 ${
                       isPop
                         ? 'bg-[#910A1D] text-white hover:bg-[#7a0815]'

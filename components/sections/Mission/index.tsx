@@ -3,9 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { MissionProps } from '../../types';
 
-export default function Mission({ data }: { data: any }) {
-  if (!data) return null;
+export default function Mission({ data }: MissionProps) {
 
   return (
     <section className="w-full bg-[#f8f9fa] flex flex-col lg:flex-row items-stretch overflow-hidden">
@@ -29,18 +29,18 @@ export default function Mission({ data }: { data: any }) {
             <div className="flex items-center gap-4 mb-4">
               <span className="h-[2px] w-[40px] bg-[#c8102e]" />
               <span className="text-[13px] font-bold uppercase tracking-[3px] text-[#c8102e]">
-                {data.subtitle || 'OUR MISSION'}
+                {data.subtitle}
               </span>
             </div>
             <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-black leading-[1.15] tracking-tight text-[#111820] mb-5">
-              {data.title_line1 || 'Driven by Care,'}
+              {data.title_line1}
               <br />
               <span className="text-[#c8102e]">
-                {data.title_highlight || 'Committed to Excellence'}
+                {data.title_highlight}
               </span>
             </h2>
             <p className="text-[14px] leading-[1.65] text-[#4b5563] max-w-[550px]">
-              {data.description || 'Our mission is to deliver high-quality car wash and detailing services that keep every vehicle looking its best. We are committed to using the right techniques, premium products, and a customer-first approach to ensure cleaner, healthier, and longer-lasting vehicles.'}
+              {data.description}
             </p>
           </motion.div>
         </div>
@@ -66,7 +66,7 @@ export default function Mission({ data }: { data: any }) {
           className="absolute inset-0 z-20 h-full w-full mission-img"
         >
           <Image
-            src={data.image || '/img/mission.png'}
+            src={data.image}
             alt="Our Mission"
             fill
             className="object-cover"

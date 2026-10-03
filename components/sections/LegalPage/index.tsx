@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { LegalPageProps } from '../../types';
 
-export default function LegalPage({ data }: { data: any }) {
+export default function LegalPage({ data }: LegalPageProps) {
   if (!data) return null;
 
   return (
     <section className="bg-white py-8 lg:py-12 relative overflow-hidden">
       <div className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-10">
         
-        {data.sections?.map((section: any, index: number) => (
+        {data.sections?.map((section, index) => (
           <div key={index} className="pb-5 mb-5 relative">
             <motion.h2 
               initial={{ opacity: 0, x: -30 }}

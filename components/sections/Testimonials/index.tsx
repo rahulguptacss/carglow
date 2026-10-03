@@ -2,13 +2,13 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { TestimonialsSectionData } from '../../types';
+import { TestimonialsProps } from '../../types';
 import { Star, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
 
-export default function Testimonials({ data, isGrid = false, itemsPerPage = 6, showPagination = true, bgClass = "bg-[#fdfdfd]" }: { data: TestimonialsSectionData, isGrid?: boolean, itemsPerPage?: number, showPagination?: boolean, bgClass?: string }) {
+export default function Testimonials({ data, isGrid = false, itemsPerPage = 6, showPagination = true, bgClass = "bg-[#fdfdfd]" }: TestimonialsProps) {
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   
   const reviews = data?.reviews && data.reviews.length > 0 ? data.reviews : [

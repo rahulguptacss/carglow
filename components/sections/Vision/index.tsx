@@ -3,9 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { VisionProps } from '../../types';
 
-export default function Vision({ data }: { data: any }) {
-  if (!data) return null;
+export default function Vision({ data }: VisionProps) {
 
   return (
     <section className="w-full bg-[#111111] flex flex-col-reverse lg:flex-row items-stretch overflow-hidden">
@@ -36,7 +36,7 @@ export default function Vision({ data }: { data: any }) {
           className="absolute inset-0 z-20 h-full w-full vision-img"
         >
           <Image 
-            src={data.image || '/img/vision.png'}
+            src={data.image}
             alt="Our Vision"
             fill
             className="object-cover"
@@ -56,18 +56,18 @@ export default function Vision({ data }: { data: any }) {
             <div className="flex items-center gap-4 mb-4">
               <span className="h-[2px] w-[40px] bg-[#c8102e]" />
               <span className="text-[13px] font-bold uppercase tracking-[3px] text-[#c8102e]">
-                {data.subtitle || 'OUR VISION'}
+                {data.subtitle}
               </span>
             </div>
             <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-black leading-[1.15] tracking-tight text-white mb-5">
-              {data.title_line1 || 'A Cleaner Tomorrow'}
+              {data.title_line1}
               <br />
               <span className="text-[#c8102e]">
-                {data.title_highlight || 'For Every Journey'}
+                {data.title_highlight}
               </span>
             </h2>
             <p className="text-[14px] leading-[1.65] text-zinc-400">
-              {data.description || 'Our vision is to be the most trusted and preferred car wash and detailing brand, known for exceptional service, innovation, and care. We aim to set new standards in vehicle care and create a cleaner, brighter, and more confident driving experience for every customer.'}
+              {data.description}
             </p>
           </motion.div>
         </div>
