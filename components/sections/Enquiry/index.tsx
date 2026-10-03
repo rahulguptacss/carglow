@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import {
   Headphones,
@@ -60,6 +61,12 @@ export default function Enquiry({ data, services = [] }: EnquiryProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/thank-you');
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -188,7 +195,7 @@ export default function Enquiry({ data, services = [] }: EnquiryProps) {
                   {form?.description}
                 </p>
 
-                <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-3" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-[16px] h-[16px] text-[#94A3B8]" />
@@ -293,7 +300,7 @@ export default function Enquiry({ data, services = [] }: EnquiryProps) {
                   </div>
 
                   <motion.button
-                    type="button"
+                    type="submit"
                     whileHover={{ scale: 1.015, x: 0 }}
                     whileTap={{ scale: 0.98 }}
                     className="w-full h-[48px] sm:h-[50px] bg-[#910A1D] hover:bg-[#7a0818] text-white font-bold text-[14px] sm:text-[15px] rounded-md flex items-center justify-center gap-2 transition-colors cursor-pointer mt-1"

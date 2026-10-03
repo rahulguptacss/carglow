@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Car, Phone, User, Mail, Calendar, MapPin, Clock, Lock, ArrowRight, Sparkles, Leaf } from 'lucide-react';
 import { FaLeaf, FaCog, FaThumbsUp, FaHeadset } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { DoorstepBookingProps } from '../../types';
 import Link from 'next/link';
 
@@ -15,7 +16,15 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function DoorstepBooking({ data }: DoorstepBookingProps) {
+  const router = useRouter();
+
   if (!data) return null;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/thank-you');
+  };
+
   return (
     <>
       <section className="pt-10 lg:pt-14 pb-8 bg-white">
@@ -36,7 +45,7 @@ export default function DoorstepBooking({ data }: DoorstepBookingProps) {
               </h2>
               <p className="text-[#64748b] text-[15px] mb-5">{data.description}</p>
 
-              <form className="space-y-3">
+              <form className="space-y-3" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
@@ -63,9 +72,9 @@ export default function DoorstepBooking({ data }: DoorstepBookingProps) {
                     <input type="text" placeholder="Preferred Time" className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-md text-[14px] focus:outline-none focus:border-[#910A1D] focus:ring-1 focus:ring-[#910A1D] transition-all shadow-sm placeholder:text-gray-400" />
                   </div>
                 </div>
-                <Link href="/enquiry" className="w-full bg-[#910A1D] hover:bg-[#720016] text-white py-[14px] rounded-md font-bold text-[16px] flex items-center justify-center gap-2 mt-4 transition-all group">
+                <button type="submit" className="w-full bg-[#910A1D] hover:bg-[#720016] text-white py-[14px] rounded-md font-bold text-[16px] flex items-center justify-center gap-2 mt-4 transition-all group">
                   Book Now <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
                 <p className="text-center text-[13px] text-gray-500 mt-2 flex items-center justify-center gap-1.5 font-medium">
                   <Lock className="w-3.5 h-3.5" /> Your information is safe with us.
                 </p>

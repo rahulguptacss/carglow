@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ChevronRight, ArrowRight, User, Phone, Car, Calendar, MessageSquare, Lock, PhoneCall, Droplet, Leaf, Sparkles, Clock, Droplets, Settings, CheckCircle2 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,10 +15,15 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
   const firstWord = titleWords[0];
   const restWords = titleWords.slice(1).join(' ');
 
-  // Dropdown state
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [selectedService, setSelectedService] = React.useState("");
   const dropdownRef = React.useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/thank-you');
+  };
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -192,13 +198,14 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
           </motion.div>
 
           {/* Sidebar (Right Side) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-[35%] xl:w-[30%] lg:sticky lg:top-32 w-full space-y-6"
-          >
+          <aside className="lg:w-[35%] xl:w-[30%] w-full lg:sticky lg:top-32 self-start">
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
             <div className="space-y-6">
               
               {/* Our Services List */}
@@ -258,7 +265,7 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
                   {sidebarData?.enquiry?.description || "Fill in your details and we'll get back to you shortly."}
                 </p>
 
-                <form className="space-y-3 text-left">
+                <form className="space-y-3 text-left" onSubmit={handleSubmit}>
                   <div className="relative">
                     <User className="absolute left-4 top-[14px] w-[18px] h-[18px] text-zinc-400" />
                     <input type="text" placeholder={sidebarData?.enquiry?.form_placeholders?.name || "Your Name *"} className="w-full h-[48px] pl-11 pr-4 bg-white border border-zinc-200 rounded-md text-[14px] outline-none focus:border-[#910A1D] transition-colors" />
@@ -344,9 +351,9 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
                     <MessageSquare className="absolute left-4 top-[14px] w-[18px] h-[18px] text-zinc-400" />
                     <textarea placeholder={sidebarData?.enquiry?.form_placeholders?.message || "Your Message (Optional)"} className="w-full h-[100px] pl-11 pr-4 pt-3 bg-white border border-zinc-200 rounded-md text-[14px] outline-none focus:border-[#910A1D] transition-colors resize-none"></textarea>
                   </div>
-                  <Link href="/enquiry" className="w-full h-[50px] bg-[#910A1D] text-white font-bold text-[15px] rounded-md flex items-center justify-center gap-2 hover:bg-[#7a0818] transition-colors cursor-pointer">
+                  <button type="submit" className="w-full h-[50px] bg-[#910A1D] text-white font-bold text-[15px] rounded-md flex items-center justify-center gap-2 hover:bg-[#7a0818] transition-colors cursor-pointer">
                     {sidebarData?.enquiry?.button_text || "Send Enquiry"} <ChevronRight className="w-[18px] h-[18px]" />
-                  </Link>
+                  </button>
                   <p className="flex items-center justify-center gap-2 text-[12px] text-zinc-500 mt-3">
                     <Lock className="w-[14px] h-[14px]" /> {sidebarData?.enquiry?.footer_text || "Your information is safe with us."}
                   </p>
@@ -377,7 +384,8 @@ export default function ServiceDetails({ data, allServices, sidebarData }: Servi
               </motion.div>
 
             </div>
-          </motion.div>
+            </motion.div>
+          </aside>
 
         </div>
       </div>

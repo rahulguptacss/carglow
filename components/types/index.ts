@@ -671,6 +671,17 @@ export interface DoorstepBookingProps {
   data: DoorstepBookingData;
 }
 
+export interface ThankYouSectionData {
+  title: string;
+  title_highlight: string;
+  description: string;
+  button: { text: string; href: string };
+}
+
+export interface ThankYouProps {
+  data: ThankYouSectionData;
+}
+
 export const siteJson = data;
 export const common = data.common;
 export const template = data.categories.Automotive.templateComponents['template-1'];

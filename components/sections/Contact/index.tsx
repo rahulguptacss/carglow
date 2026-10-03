@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import {
   ChevronRight,
@@ -38,6 +39,12 @@ export default function Contact({ data, services = [] }: ContactProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push('/thank-you');
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -159,7 +166,7 @@ export default function Contact({ data, services = [] }: ContactProps) {
             <h3 className="text-[22px] sm:text-[32px] font-black text-[#0B1220] mb-2">{form.title}</h3>
             <p className="text-[13px] sm:text-[14px] text-[#6B7280] mb-5 sm:mb-6">{form.description}</p>
 
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-3" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <input type="text" placeholder={form.placeholders.name} className={inputClass} />
                 <input type="email" placeholder={form.placeholders.email} className={inputClass} />
@@ -220,7 +227,7 @@ export default function Contact({ data, services = [] }: ContactProps) {
                 className="w-full h-[120px] px-4 py-3 bg-white border border-[#E6E8EE] rounded-md text-[14px] outline-none focus:border-[#910A1D] resize-none placeholder:text-[#9CA3AF]"
               />
               <motion.button
-                type="button"
+                type="submit"
                 whileHover={{ scale: 1.015 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full h-[48px] sm:h-[50px] bg-[#910A1D] hover:bg-[#7a0818] text-white font-bold text-[14px] sm:text-[15px] rounded-md flex items-center justify-center gap-2 cursor-pointer"

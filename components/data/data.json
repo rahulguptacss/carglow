@@ -152,12 +152,30 @@
         }
       ],
       "our_services": [
-        { "name": "Car Wash", "href": "/services/car-wash" },
-        { "name": "Interior Detailing", "href": "/services/interior-detailing" },
-        { "name": "Paint Protection", "href": "/services/paint-protection" },
-        { "name": "Engine Cleaning", "href": "/services/engine-cleaning" },
-        { "name": "Tyre & Rim Care", "href": "/services/tyre-rim-care" },
-        { "name": "Headlight Restoration", "href": "/services/headlight-restoration" }
+        {
+          "name": "Car Wash",
+          "href": "/services/car-wash"
+        },
+        {
+          "name": "Interior Detailing",
+          "href": "/services/interior-detailing"
+        },
+        {
+          "name": "Paint Protection",
+          "href": "/services/paint-protection"
+        },
+        {
+          "name": "Engine Cleaning",
+          "href": "/services/engine-cleaning"
+        },
+        {
+          "name": "Tyre & Rim Care",
+          "href": "/services/tyre-rim-care"
+        },
+        {
+          "name": "Headlight Restoration",
+          "href": "/services/headlight-restoration"
+        }
       ],
       "contact": {
         "address": "123 Street, New York, NY",
@@ -666,6 +684,19 @@
                   "component": "LegalPage"
                 }
               ]
+            },
+            "thank_you": {
+              "title": "THANK YOU",
+              "pageName": "Thank You",
+              "metadata": {
+                "title": "CarGlow - Thank You"
+              },
+              "components": [
+                {
+                  "key": "ThankYouSection",
+                  "component": "ThankYou"
+                }
+              ]
             }
           },
           "sections": {
@@ -1165,12 +1196,30 @@
                 "search_placeholder": "Search Articles...",
                 "categories_title": "Categories",
                 "categories": [
-                  { "name": "Car Care Tips", "slug": "car-care-tips" },
-                  { "name": "Detailing Guide", "slug": "detailing-guide" },
-                  { "name": "Maintenance", "slug": "maintenance" },
-                  { "name": "Product Tips", "slug": "product-tips" },
-                  { "name": "Seasonal Care", "slug": "seasonal-care" },
-                  { "name": "Industry News", "slug": "industry-news" }
+                  {
+                    "name": "Car Care Tips",
+                    "slug": "car-care-tips"
+                  },
+                  {
+                    "name": "Detailing Guide",
+                    "slug": "detailing-guide"
+                  },
+                  {
+                    "name": "Maintenance",
+                    "slug": "maintenance"
+                  },
+                  {
+                    "name": "Product Tips",
+                    "slug": "product-tips"
+                  },
+                  {
+                    "name": "Seasonal Care",
+                    "slug": "seasonal-care"
+                  },
+                  {
+                    "name": "Industry News",
+                    "slug": "industry-news"
+                  }
                 ],
                 "cta": {
                   "badge": "KEEP YOUR CAR IN TOP SHAPE",
@@ -1504,11 +1553,26 @@
                 }
               ],
               "socials": [
-                { "icon": "Facebook", "href": "https://www.facebook.com/" },
-                { "icon": "Twitter", "href": "https://x.com/" },
-                { "icon": "Instagram", "href": "https://www.instagram.com/" },
-                { "icon": "Linkedin", "href": "https://www.linkedin.com/" },
-                { "icon": "Youtube", "href": "https://www.youtube.com/" }
+                {
+                  "icon": "Facebook",
+                  "href": "https://www.facebook.com/"
+                },
+                {
+                  "icon": "Twitter",
+                  "href": "https://x.com/"
+                },
+                {
+                  "icon": "Instagram",
+                  "href": "https://www.instagram.com/"
+                },
+                {
+                  "icon": "Linkedin",
+                  "href": "https://www.linkedin.com/"
+                },
+                {
+                  "icon": "Youtube",
+                  "href": "https://www.youtube.com/"
+                }
               ],
               "form": {
                 "subtitle": "SEND US A MESSAGE",
@@ -1532,7 +1596,10 @@
                 "address_label": "Address",
                 "address": "123 Street, New York, NY",
                 "hours_label": "Working Hours",
-                "hours": ["Monday - Saturday: 9:00 AM - 7:00 PM", "Sunday: Closed"],
+                "hours": [
+                  "Monday - Saturday: 9:00 AM - 7:00 PM",
+                  "Sunday: Closed"
+                ],
                 "help_title": "Need Immediate Help?",
                 "help_button": "Call Us Now",
                 "phone": "+1 00000000000"
@@ -1555,14 +1622,38 @@
               "subtitle": "IMAGE GALLERY",
               "title": "Our Recent Work",
               "items": [
-                { "image": "/blog/1.png", "alt": "Exterior car wash" },
-                { "image": "/blog/2.png", "alt": "Tyre cleaning" },
-                { "image": "/blog/3.png", "alt": "Interior vacuum" },
-                { "image": "/services/1.png", "alt": "Door panel cleaning" },
-                { "image": "/services/2.png", "alt": "Foam wash" },
-                { "image": "/services/3.png", "alt": "Steering detailing" },
-                { "image": "/services/4.png", "alt": "Dashboard wipe" },
-                { "image": "/services/5.png", "alt": "Headlight polish" }
+                {
+                  "image": "/blog/1.png",
+                  "alt": "Exterior car wash"
+                },
+                {
+                  "image": "/blog/2.png",
+                  "alt": "Tyre cleaning"
+                },
+                {
+                  "image": "/blog/3.png",
+                  "alt": "Interior vacuum"
+                },
+                {
+                  "image": "/services/1.png",
+                  "alt": "Door panel cleaning"
+                },
+                {
+                  "image": "/services/2.png",
+                  "alt": "Foam wash"
+                },
+                {
+                  "image": "/services/3.png",
+                  "alt": "Steering detailing"
+                },
+                {
+                  "image": "/services/4.png",
+                  "alt": "Dashboard wipe"
+                },
+                {
+                  "image": "/services/5.png",
+                  "alt": "Headlight polish"
+                }
               ]
             },
             "video_gallery": {
@@ -1599,82 +1690,188 @@
                   "icon": "Home",
                   "title": "Main Pages",
                   "links": [
-                    { "name": "Home", "href": "/" },
-                    { "name": "About Us", "href": "/about" },
-                    { "name": "Why Choose Us", "href": "/why-choose-us" },
-                    { "name": "Mission & Vision", "href": "/mission-vision" },
-                    { "name": "Our Team", "href": "/team" },
-                    { "name": "Team Details", "href": "/team/eng-david-alexon" }
+                    {
+                      "name": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "name": "About Us",
+                      "href": "/about"
+                    },
+                    {
+                      "name": "Why Choose Us",
+                      "href": "/why-choose-us"
+                    },
+                    {
+                      "name": "Mission & Vision",
+                      "href": "/mission-vision"
+                    },
+                    {
+                      "name": "Our Team",
+                      "href": "/team"
+                    },
+                    {
+                      "name": "Team Details",
+                      "href": "/team/eng-david-alexon"
+                    }
                   ]
                 },
                 {
                   "icon": "Settings",
                   "title": "Services",
                   "links": [
-                    { "name": "Services", "href": "/services" },
-                    { "name": "Services Details", "href": "/services/car-wash" },
-                    { "name": "Doorstep Wash", "href": "/doorstep-wash" },
-                    { "name": "Packages", "href": "/packages" },
-                    { "name": "Get A Quote", "href": "/get-a-quote" }
+                    {
+                      "name": "Services",
+                      "href": "/services"
+                    },
+                    {
+                      "name": "Services Details",
+                      "href": "/services/car-wash"
+                    },
+                    {
+                      "name": "Doorstep Wash",
+                      "href": "/doorstep-wash"
+                    },
+                    {
+                      "name": "Packages",
+                      "href": "/packages"
+                    },
+                    {
+                      "name": "Get A Quote",
+                      "href": "/get-a-quote"
+                    }
                   ]
                 },
                 {
                   "icon": "Image",
                   "title": "Media & Stories",
                   "links": [
-                    { "name": "Gallery", "href": "/gallery" },
-                    { "name": "Testimonials", "href": "/testimonials" },
-                    { "name": "Blog", "href": "/blog" },
-                    { "name": "Blog Details", "href": "/blog/how-regular-car-wash-keeps-your-vehicle-in-top-condition" }
+                    {
+                      "name": "Gallery",
+                      "href": "/gallery"
+                    },
+                    {
+                      "name": "Testimonials",
+                      "href": "/testimonials"
+                    },
+                    {
+                      "name": "Blog",
+                      "href": "/blog"
+                    },
+                    {
+                      "name": "Blog Details",
+                      "href": "/blog/how-regular-car-wash-keeps-your-vehicle-in-top-condition"
+                    }
                   ]
                 },
                 {
                   "icon": "Info",
                   "title": "Help & Support",
                   "links": [
-                    { "name": "FAQs", "href": "/faqs" },
-                    { "name": "Terms & Conditions", "href": "/terms-conditions" },
-                    { "name": "Refund Policy", "href": "/refund-policy" },
-                    { "name": "Sitemap", "href": "/sitemap" },
-                    { "name": "404 Error", "href": "/404" }
+                    {
+                      "name": "FAQs",
+                      "href": "/faqs"
+                    },
+                    {
+                      "name": "Terms & Conditions",
+                      "href": "/terms-conditions"
+                    },
+                    {
+                      "name": "Refund Policy",
+                      "href": "/refund-policy"
+                    },
+                    {
+                      "name": "Sitemap",
+                      "href": "/sitemap"
+                    },
+                    {
+                      "name": "404 Error",
+                      "href": "/404"
+                    }
                   ]
                 },
                 {
                   "icon": "Phone",
                   "title": "Get in Touch",
                   "links": [
-                    { "name": "Contact Us", "href": "/contact" },
-                    { "name": "Enquire Now", "href": "/enquiry" }
+                    {
+                      "name": "Contact Us",
+                      "href": "/contact"
+                    },
+                    {
+                      "name": "Enquire Now",
+                      "href": "/enquiry"
+                    },
+                    {
+                      "name": "Thank You",
+                      "href": "/thank-you"
+                    }
                   ]
                 },
                 {
                   "icon": "Users",
                   "title": "Our Company",
                   "links": [
-                    { "name": "About Us", "href": "/about" },
-                    { "name": "Mission & Vision", "href": "/mission-vision" },
-                    { "name": "Our Team", "href": "/team" }
+                    {
+                      "name": "About Us",
+                      "href": "/about"
+                    },
+                    {
+                      "name": "Mission & Vision",
+                      "href": "/mission-vision"
+                    },
+                    {
+                      "name": "Our Team",
+                      "href": "/team"
+                    }
                   ]
                 },
                 {
                   "icon": "Car",
                   "title": "Service Options",
                   "links": [
-                    { "name": "Services", "href": "/services" },
-                    { "name": "Doorstep Wash", "href": "/doorstep-wash" },
-                    { "name": "Packages", "href": "/packages" },
-                    { "name": "Get A Quote", "href": "/get-a-quote" }
+                    {
+                      "name": "Services",
+                      "href": "/services"
+                    },
+                    {
+                      "name": "Doorstep Wash",
+                      "href": "/doorstep-wash"
+                    },
+                    {
+                      "name": "Packages",
+                      "href": "/packages"
+                    },
+                    {
+                      "name": "Get A Quote",
+                      "href": "/get-a-quote"
+                    }
                   ]
                 },
                 {
                   "icon": "FileText",
                   "title": "Legal & Policies",
                   "links": [
-                    { "name": "Privacy Policy", "href": "/privacy-policy" },
-                    { "name": "Terms & Conditions", "href": "/terms-conditions" },
-                    { "name": "Refund Policy", "href": "/refund-policy" },
-                    { "name": "Sitemap", "href": "/sitemap" },
-                    { "name": "404 Error", "href": "/404" }
+                    {
+                      "name": "Privacy Policy",
+                      "href": "/privacy-policy"
+                    },
+                    {
+                      "name": "Terms & Conditions",
+                      "href": "/terms-conditions"
+                    },
+                    {
+                      "name": "Refund Policy",
+                      "href": "/refund-policy"
+                    },
+                    {
+                      "name": "Sitemap",
+                      "href": "/sitemap"
+                    },
+                    {
+                      "name": "404 Error",
+                      "href": "/404"
+                    }
                   ]
                 }
               ]
@@ -3030,6 +3227,15 @@
                 }
               ],
               "last_updated": "August 20, 2026"
+            },
+            "thank_you": {
+              "title": "Thank",
+              "title_highlight": "You!",
+              "description": "We have received your message successfully. One of our automotive experts will get back to you shortly.",
+              "button": {
+                "text": "Return Home",
+                "href": "/"
+              }
             }
           }
         }
